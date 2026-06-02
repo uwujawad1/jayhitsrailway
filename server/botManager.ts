@@ -372,14 +372,25 @@ class BotManager {
   }
 
   getBotSettings(): Record<string, any> {
+    const defaults = { mass_check_enabled: true, inline_mass_limit: 10, file_mass_limit: 300, gateway_settings: {}, tool_settings: {} };
+    const normalize = (settings: Record<string, any>) => ({
+      ...defaults,
+      ...settings,
+      gateway_settings: settings?.gateway_settings && typeof settings.gateway_settings === "object" && !Array.isArray(settings.gateway_settings)
+        ? settings.gateway_settings
+        : {},
+      tool_settings: settings?.tool_settings && typeof settings.tool_settings === "object" && !Array.isArray(settings.tool_settings)
+        ? settings.tool_settings
+        : {},
+    });
     const settingsPath = path.join(this.botDir, "bot_settings.json");
     try {
-      if (!fs.existsSync(settingsPath)) return { mass_check_enabled: true, inline_mass_limit: 10, file_mass_limit: 300, gateway_settings: {}, tool_settings: {} };
+      if (!fs.existsSync(settingsPath)) return defaults;
       const content = fs.readFileSync(settingsPath, "utf-8");
-      if (!content.trim()) return { mass_check_enabled: true, inline_mass_limit: 10, file_mass_limit: 300, gateway_settings: {}, tool_settings: {} };
-      return JSON.parse(content);
+      if (!content.trim()) return defaults;
+      return normalize(JSON.parse(content));
     } catch {
-      return { mass_check_enabled: true, inline_mass_limit: 10, file_mass_limit: 300, gateway_settings: {}, tool_settings: {} };
+      return defaults;
     }
   }
 

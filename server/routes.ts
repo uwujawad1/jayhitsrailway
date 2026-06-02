@@ -121,12 +121,46 @@ const _userProxiesPath = path.join(path.resolve(process.cwd(), "bot"), "user_pro
 let _userProxiesCache: Record<string, { proxies: string[] }> | null = null;
 let _userProxiesCacheAt = 0;
 const USER_PROXIES_CACHE_TTL = 20_000; // 20s — picks up Python-side auto-removals quickly
+
+function normalizeProxyList(value: unknown): string[] {
+  const rawList = Array.isArray(value)
+    ? value
+    : value && typeof value === "object" && Array.isArray((value as any).proxies)
+      ? (value as any).proxies
+      : value && typeof value === "object" && Array.isArray((value as any).proxy)
+        ? (value as any).proxy
+        : typeof value === "string"
+          ? value.split(/\r?\n/)
+          : [];
+
+  const seen = new Set<string>();
+  const proxies: string[] = [];
+  for (const item of rawList) {
+    if (typeof item !== "string") continue;
+    const proxy = item.trim();
+    if (!proxy || seen.has(proxy)) continue;
+    seen.add(proxy);
+    proxies.push(proxy);
+  }
+  return proxies;
+}
+
+function normalizeUserProxiesData(data: unknown): Record<string, { proxies: string[] }> {
+  if (!data || typeof data !== "object" || Array.isArray(data)) return {};
+  const normalized: Record<string, { proxies: string[] }> = {};
+  for (const [userId, value] of Object.entries(data as Record<string, unknown>)) {
+    const proxies = normalizeProxyList(value);
+    if (proxies.length > 0) normalized[String(userId)] = { proxies };
+  }
+  return normalized;
+}
+
 function loadUserProxies(): Record<string, { proxies: string[] }> {
   const now = Date.now();
   if (_userProxiesCache !== null && (now - _userProxiesCacheAt) < USER_PROXIES_CACHE_TTL) return _userProxiesCache;
   try {
     if (fs.existsSync(_userProxiesPath)) {
-      _userProxiesCache = JSON.parse(fs.readFileSync(_userProxiesPath, "utf-8"));
+      _userProxiesCache = normalizeUserProxiesData(JSON.parse(fs.readFileSync(_userProxiesPath, "utf-8")));
       _userProxiesCacheAt = now;
       return _userProxiesCache!;
     }
@@ -136,9 +170,9 @@ function loadUserProxies(): Record<string, { proxies: string[] }> {
   return _userProxiesCache;
 }
 function saveUserProxies(data: Record<string, { proxies: string[] }>) {
-  _userProxiesCache = data;
+  _userProxiesCache = normalizeUserProxiesData(data);
   _userProxiesCacheAt = Date.now();
-  fs.writeFileSync(_userProxiesPath, JSON.stringify(data, null, 2));
+  fs.writeFileSync(_userProxiesPath, JSON.stringify(_userProxiesCache, null, 2));
   saveJsonFile("user_proxies.json").catch(() => {});
   debouncedSaveJson();
 }
