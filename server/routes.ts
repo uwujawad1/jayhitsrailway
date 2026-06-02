@@ -120,6 +120,7 @@ function sendLogsGroupTelegram(card: string, gateway: string, response: string, 
 const _userProxiesPath = path.join(path.resolve(process.cwd(), "bot"), "user_proxies.json");
 let _userProxiesCache: Record<string, { proxies: string[] }> | null = null;
 let _userProxiesCacheAt = 0;
+const USER_PROXY_LIMIT = 20;
 const USER_PROXIES_CACHE_TTL = 20_000; // 20s — picks up Python-side auto-removals quickly
 
 function normalizeProxyList(value: unknown): string[] {
@@ -4011,11 +4012,15 @@ function saveSkKeys(data: Record<string, string[]>) {
 
   app.get("/api/user/settings", requireAuth, (req, res) => {
     try {
-      const userId = req.session!.userId;
+      res.set("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
+      const userId = req.session!.userId!;
       const proxies = loadUserProxies();
       const skKeys = loadSkKeys();
+      const userProxies = proxies[userId]?.proxies || [];
       res.json({
-        proxies: proxies[userId]?.proxies || [],
+        proxies: userProxies,
+        proxyLimit: USER_PROXY_LIMIT,
+        proxyCount: userProxies.length,
         skKeys: skKeys[userId] || [],
       });
     } catch (err: any) {
@@ -4025,7 +4030,7 @@ function saveSkKeys(data: Record<string, string[]>) {
 
   app.post("/api/user/settings/proxy", requireAuth, async (req, res) => {
     try {
-      const userId = req.session!.userId;
+      const userId = req.session!.userId!;
       const { proxy } = req.body;
       if (!proxy || typeof proxy !== "string" || proxy.trim().length < 5) {
         return res.status(400).json({ error: "Invalid proxy" });
@@ -4044,12 +4049,22 @@ function saveSkKeys(data: Record<string, string[]>) {
       if (data[userId].proxies.includes(raw)) {
         return res.status(400).json({ error: "Proxy already exists" });
       }
-      if (data[userId].proxies.length >= 20) {
-        return res.status(400).json({ error: "Max 20 proxies allowed" });
+      if (data[userId].proxies.length >= USER_PROXY_LIMIT) {
+        return res.status(400).json({
+          error: `Max ${USER_PROXY_LIMIT} proxies allowed`,
+          proxies: data[userId].proxies,
+          proxyLimit: USER_PROXY_LIMIT,
+          proxyCount: data[userId].proxies.length,
+        });
       }
       data[userId].proxies.push(raw);
       saveUserProxies(data);
-      res.json({ success: true, proxies: data[userId].proxies });
+      res.json({
+        success: true,
+        proxies: data[userId].proxies,
+        proxyLimit: USER_PROXY_LIMIT,
+        proxyCount: data[userId].proxies.length,
+      });
     } catch (err: any) {
       res.status(500).json({ error: err.message });
     }
@@ -4057,7 +4072,7 @@ function saveSkKeys(data: Record<string, string[]>) {
 
   app.post("/api/user/settings/proxy/bulk", requireAuth, async (req, res) => {
     try {
-      const userId = req.session!.userId;
+      const userId = req.session!.userId!;
       const { proxies } = req.body;
       if (!proxies || typeof proxies !== "string") {
         return res.status(400).json({ error: "Provide proxies as text (one per line)" });
@@ -4072,9 +4087,14 @@ function saveSkKeys(data: Record<string, string[]>) {
       if (!data[userId]) data[userId] = { proxies: [] };
 
       const existing = new Set(data[userId].proxies);
-      const maxSlots = 20 - data[userId].proxies.length;
+      const maxSlots = USER_PROXY_LIMIT - data[userId].proxies.length;
       if (maxSlots <= 0) {
-        return res.status(400).json({ error: "Proxy limit reached (20 max)" });
+        return res.status(400).json({
+          error: `Proxy limit reached (${USER_PROXY_LIMIT} max)`,
+          proxies: data[userId].proxies,
+          proxyLimit: USER_PROXY_LIMIT,
+          proxyCount: data[userId].proxies.length,
+        });
       }
 
       const validateScript = path.join(path.resolve(process.cwd(), "bot"), "web_validate_proxy.py");
@@ -4109,6 +4129,8 @@ function saveSkKeys(data: Record<string, string[]>) {
         invalid,
         total: data[userId].proxies.length,
         proxies: data[userId].proxies,
+        proxyLimit: USER_PROXY_LIMIT,
+        proxyCount: data[userId].proxies.length,
       });
     } catch (err: any) {
       res.status(500).json({ error: err.message });
@@ -4117,16 +4139,21 @@ function saveSkKeys(data: Record<string, string[]>) {
 
   app.delete("/api/user/settings/proxy", requireAuth, (req, res) => {
     try {
-      const userId = req.session!.userId;
+      const userId = req.session!.userId!;
       const { proxy } = req.body;
       if (!proxy) return res.status(400).json({ error: "Proxy required" });
 
       const data = loadUserProxies();
-      if (!data[userId]) return res.json({ success: true, proxies: [] });
+      if (!data[userId]) return res.json({ success: true, proxies: [], proxyLimit: USER_PROXY_LIMIT, proxyCount: 0 });
       data[userId].proxies = data[userId].proxies.filter((p: string) => p !== proxy);
       if (data[userId].proxies.length === 0) delete data[userId];
       saveUserProxies(data);
-      res.json({ success: true, proxies: data[userId]?.proxies || [] });
+      res.json({
+        success: true,
+        proxies: data[userId]?.proxies || [],
+        proxyLimit: USER_PROXY_LIMIT,
+        proxyCount: data[userId]?.proxies.length || 0,
+      });
     } catch (err: any) {
       res.status(500).json({ error: err.message });
     }
@@ -4134,13 +4161,13 @@ function saveSkKeys(data: Record<string, string[]>) {
 
   app.delete("/api/user/settings/proxy/all", requireAuth, (req, res) => {
     try {
-      const userId = req.session!.userId;
+      const userId = req.session!.userId!;
       const data = loadUserProxies();
       if (data[userId]) {
         delete data[userId];
         saveUserProxies(data);
       }
-      res.json({ success: true, proxies: [] });
+      res.json({ success: true, proxies: [], proxyLimit: USER_PROXY_LIMIT, proxyCount: 0 });
     } catch (err: any) {
       res.status(500).json({ error: err.message });
     }
@@ -4164,7 +4191,7 @@ function saveSkKeys(data: Record<string, string[]>) {
   // GET /api/user/settings/proxy/status — test the user's currently active proxy
   app.get("/api/user/settings/proxy/status", requireAuth, async (req, res) => {
     try {
-      const userId = req.session!.userId;
+      const userId = req.session!.userId!;
       const proxyData = loadUserProxies();
       const userProxies: string[] = proxyData[userId]?.proxies || [];
       if (userProxies.length === 0) {
@@ -4187,7 +4214,7 @@ function saveSkKeys(data: Record<string, string[]>) {
 
   app.post("/api/user/settings/sk", requireAuth, (req, res) => {
     try {
-      const userId = req.session!.userId;
+      const userId = req.session!.userId!;
       const { sk } = req.body;
       if (!sk || typeof sk !== "string") {
         return res.status(400).json({ error: "SK key required" });
@@ -4215,7 +4242,7 @@ function saveSkKeys(data: Record<string, string[]>) {
 
   app.delete("/api/user/settings/sk", requireAuth, (req, res) => {
     try {
-      const userId = req.session!.userId;
+      const userId = req.session!.userId!;
       const { sk } = req.body;
       if (!sk) return res.status(400).json({ error: "SK key required" });
 

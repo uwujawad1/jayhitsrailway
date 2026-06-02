@@ -57,6 +57,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const logout = useCallback(async () => {
     await fetch(apiUrl("/api/auth/logout"), { method: "POST", credentials: "include" });
+    queryClient.removeQueries({ queryKey: ["/api/user/settings"] });
+    queryClient.removeQueries({ queryKey: ["/api/user/dashboard"] });
+    queryClient.removeQueries({ queryKey: ["/api/user/tier"] });
     queryClient.invalidateQueries({ queryKey: ["/api/auth/session"] });
   }, [queryClient]);
 

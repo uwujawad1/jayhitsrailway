@@ -1,6 +1,7 @@
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
 
 const configuredApiBaseUrl = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
+const isPlaceholderApiBaseUrl = /your-.*backend|example\.com/i.test(configuredApiBaseUrl);
 
 function isLocalHostname(hostname: string): boolean {
   return hostname === "localhost" || hostname === "127.0.0.1" || hostname === "::1";
@@ -8,6 +9,10 @@ function isLocalHostname(hostname: string): boolean {
 
 function getApiBaseUrl(): string {
   if (typeof window !== "undefined" && isLocalHostname(window.location.hostname)) {
+    return "";
+  }
+
+  if (isPlaceholderApiBaseUrl) {
     return "";
   }
 

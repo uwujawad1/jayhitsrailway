@@ -10,10 +10,12 @@ import {
   ArrowLeft, Globe, Key, Loader2, Plus, Trash2, CheckCircle2, Shield, ListPlus
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest, queryClient } from "@/lib/queryClient";
+import { apiRequest, apiUrl, queryClient } from "@/lib/queryClient";
 
 interface SettingsData {
   proxies: string[];
+  proxyLimit?: number;
+  proxyCount?: number;
   skKeys: string[];
 }
 
@@ -24,6 +26,19 @@ interface TierInfo {
 function maskSk(sk: string) {
   if (sk.length <= 12) return sk;
   return sk.slice(0, 8) + "..." + sk.slice(-4);
+}
+
+function parseApiError(err: any): { message: string; data?: Partial<SettingsData> } {
+  const raw = err?.message || "Request failed";
+  const match = raw.match(/^\d+:\s*(.*)$/);
+  if (!match) return { message: raw };
+
+  try {
+    const data = JSON.parse(match[1]);
+    return { message: data.error || data.message || raw, data };
+  } catch {
+    return { message: raw };
+  }
 }
 
 export default function UserSettingsPage() {
@@ -44,6 +59,16 @@ export default function UserSettingsPage() {
 
   const { data, isLoading } = useQuery<SettingsData>({
     queryKey: ["/api/user/settings"],
+    queryFn: async () => {
+      const res = await fetch(apiUrl("/api/user/settings"), {
+        credentials: "include",
+        cache: "no-store",
+        headers: { "Cache-Control": "no-cache" },
+      });
+      if (!res.ok) throw new Error(await res.text());
+      return res.json();
+    },
+    staleTime: 0,
   });
 
   const { data: tierInfo } = useQuery<TierInfo>({
@@ -52,6 +77,18 @@ export default function UserSettingsPage() {
   });
 
   const isPaidUser = tierInfo?.tier === "silver" || tierInfo?.tier === "gold";
+  const proxyLimit = data?.proxyLimit ?? 20;
+  const proxyCount = data?.proxyCount ?? data?.proxies?.length ?? 0;
+
+  const syncSettingsFromResponse = (result: Partial<SettingsData>) => {
+    if (!Array.isArray(result.proxies)) return;
+    queryClient.setQueryData<SettingsData>(["/api/user/settings"], (current) => ({
+      proxies: result.proxies || [],
+      proxyLimit: result.proxyLimit ?? current?.proxyLimit ?? proxyLimit,
+      proxyCount: result.proxyCount ?? result.proxies?.length ?? 0,
+      skKeys: current?.skKeys || data?.skKeys || [],
+    }));
+  };
 
   const handleAddProxy = async () => {
     const raw = proxyInput.trim();
@@ -62,14 +99,18 @@ export default function UserSettingsPage() {
       const res = await apiRequest("POST", "/api/user/settings/proxy", { proxy: raw });
       const result = await res.json();
       if (result.error) {
+        syncSettingsFromResponse(result);
         toast({ title: "Failed", description: result.error, variant: "destructive" });
       } else {
+        syncSettingsFromResponse(result);
         toast({ title: "Proxy added" });
         setProxyInput("");
         queryClient.invalidateQueries({ queryKey: ["/api/user/settings"] });
       }
     } catch (err: any) {
-      toast({ title: "Error", description: err.message, variant: "destructive" });
+      const parsed = parseApiError(err);
+      if (parsed.data) syncSettingsFromResponse(parsed.data);
+      toast({ title: "Error", description: parsed.message, variant: "destructive" });
     }
     setAddingProxy(false);
   };
@@ -82,6 +123,7 @@ export default function UserSettingsPage() {
     try {
       const res = await apiRequest("POST", "/api/user/settings/proxy/bulk", { proxies: raw });
       const result = await res.json();
+      syncSettingsFromResponse(result);
       const parts = [];
       if (result.added > 0) parts.push(`${result.added} added`);
       if (result.skipped > 0) parts.push(`${result.skipped} duplicate`);
@@ -91,9 +133,9 @@ export default function UserSettingsPage() {
       setShowBulkAdd(false);
       queryClient.invalidateQueries({ queryKey: ["/api/user/settings"] });
     } catch (err: any) {
-      let msg = "Bulk import failed";
-      try { const parsed = JSON.parse(err.message.replace(/^\d+:\s*/, "")); msg = parsed.error || msg; } catch {}
-      toast({ title: "Failed", description: msg, variant: "destructive" });
+      const parsed = parseApiError(err);
+      if (parsed.data) syncSettingsFromResponse(parsed.data);
+      toast({ title: "Failed", description: parsed.message || "Bulk import failed", variant: "destructive" });
     }
     setAddingBulk(false);
   };
@@ -198,7 +240,7 @@ export default function UserSettingsPage() {
                 <CardTitle className="text-sm lg:text-lg flex items-center gap-2">
                   <Globe className="w-4 h-4 lg:w-5 lg:h-5 text-blue-400 transition-transform duration-300 hover:scale-110" />
                   Proxies
-                  <Badge variant="secondary" className="text-xs lg:text-sm">{data?.proxies?.length || 0}/20</Badge>
+                  <Badge variant="secondary" className="text-xs lg:text-sm">{proxyCount}/{proxyLimit}</Badge>
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-4 lg:p-6 pt-2 lg:pt-3 flex flex-col gap-3 lg:gap-4">

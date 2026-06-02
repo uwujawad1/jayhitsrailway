@@ -151,9 +151,26 @@ export default function CheckerPage() {
     queryKey: ["/api/account-checkers/status"],
   });
 
-  const { data: gateways = [], isLoading: gatewaysLoading, isError: gatewaysError } = useQuery<Gateway[]>({
+  const { data: gateways = [], isLoading: gatewaysLoading, isError: gatewaysError, error: gatewaysErrorDetails } = useQuery<Gateway[], Error>({
     queryKey: ["/api/checker/gateways"],
+    queryFn: async () => {
+      const res = await fetch(apiUrl("/api/checker/gateways"), {
+        credentials: "include",
+        cache: "no-store",
+        headers: { "Cache-Control": "no-cache" },
+      });
+      if (!res.ok) {
+        let message = `Failed to load gateways (${res.status})`;
+        try {
+          const data = await res.json();
+          message = data.error || data.message || message;
+        } catch {}
+        throw new Error(message);
+      }
+      return res.json();
+    },
     refetchInterval: 10000,
+    staleTime: 0,
   });
 
   const { data: existingJobs } = useQuery<any[]>({
@@ -596,7 +613,9 @@ export default function CheckerPage() {
                   </div>
                 )}
                 {gatewaysError && (
-                  <div className="text-xs lg:text-sm text-red-400 py-2">Failed to load gateways</div>
+                  <div className="text-xs lg:text-sm text-red-400 py-2">
+                    {gatewaysErrorDetails?.message || "Failed to load gateways"}
+                  </div>
                 )}
                 <Select
                   value={selectedGateway}

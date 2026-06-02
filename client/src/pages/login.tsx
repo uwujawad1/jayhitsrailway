@@ -128,6 +128,9 @@ export default function LoginPage() {
         // Directly update the session cache from the verify-otp response data —
         // avoids a second network round-trip that can race with the session write.
         if (data.user) {
+          queryClient.removeQueries({ queryKey: ["/api/user/settings"] });
+          queryClient.removeQueries({ queryKey: ["/api/user/dashboard"] });
+          queryClient.removeQueries({ queryKey: ["/api/user/tier"] });
           queryClient.setQueryData(["/api/auth/session"], {
             authenticated: true,
             user: data.user,
