@@ -71,14 +71,21 @@ allowed_origins = [
     for origin in os.getenv("ALLOWED_ORIGINS", "").split(",")
     if origin.strip()
 ]
-if allowed_origins:
-    app.add_middleware(
-        CORSMiddleware,
-        allow_origins=allowed_origins,
-        allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"],
-    )
+allow_vercel_origins = os.getenv("ALLOW_VERCEL_ORIGINS", "true").lower() == "true"
+configured_origin_regex = os.getenv("ALLOWED_ORIGIN_REGEX", "").strip()
+origin_regexes = [r"https://.*\.vercel\.app"] if allow_vercel_origins else []
+if configured_origin_regex:
+    origin_regexes.append(configured_origin_regex)
+allow_origin_regex = "|".join(f"(?:{pattern})" for pattern in origin_regexes) or None
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=allowed_origins,
+    allow_origin_regex=allow_origin_regex,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/health")

@@ -577,6 +577,18 @@ export async function registerRoutes(
       .filter(Boolean);
     if (configuredOrigins.includes(source)) return true;
 
+    const allowVercelOrigins = process.env.ALLOW_VERCEL_ORIGINS !== "false";
+    if (allowVercelOrigins && /^https:\/\/[a-z0-9-]+\.vercel\.app$/i.test(source)) return true;
+
+    const configuredOriginRegex = process.env.ALLOWED_ORIGIN_REGEX?.trim();
+    if (configuredOriginRegex) {
+      try {
+        if (new RegExp(configuredOriginRegex).test(source)) return true;
+      } catch {
+        console.warn("Invalid ALLOWED_ORIGIN_REGEX ignored.");
+      }
+    }
+
     if (!allowed.some(a => source.startsWith(a))) {
       res.status(403).json({ message: "Cross-origin API access not allowed." });
       return false;
