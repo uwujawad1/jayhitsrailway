@@ -37,7 +37,14 @@ declare module "http" {
   }
 }
 
-app.use(compression());
+app.use(
+  compression({
+    filter: (req, res) => {
+      if (req.path.startsWith("/api")) return false;
+      return compression.filter(req, res);
+    },
+  }),
+);
 
 app.use(
   express.json({

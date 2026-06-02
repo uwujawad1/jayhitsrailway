@@ -65,6 +65,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (["host", "content-length", "connection", "accept-encoding"].includes(lower)) continue;
     headers.set(key, Array.isArray(value) ? value.join(",") : value);
   }
+  headers.set("Accept-Encoding", "identity");
 
   const response = await fetch(url, {
     method: req.method,
