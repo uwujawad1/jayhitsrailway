@@ -512,6 +512,46 @@ function incrementUsage(userId: string, type: keyof Omit<DailyUsageEntry, "date"
 
 const dailyIpHitterUsage = new Map<string, { count: number; date: string }>();
 
+type TelegramUserInfo = {
+  firstName: string;
+  lastName: string;
+  username: string;
+  photoUrl: string;
+};
+
+async function fetchTelegramUserInfo(userId: string): Promise<TelegramUserInfo> {
+  try {
+    const botDir = path.resolve(process.cwd(), "bot");
+    const infoScript = path.join(botDir, "get_user_info.py");
+    const pythonPath = process.env.PYTHON_PATH || "python3";
+    const infoResult = await new Promise<string>((resolve) => {
+      let output = "";
+      const proc = spawn(pythonPath, ["-u", infoScript, userId], {
+        cwd: botDir,
+        env: { ...process.env, PYTHONUNBUFFERED: "1" } as Record<string, string>,
+        timeout: 10000,
+      });
+      proc.stdout?.on("data", (data: Buffer) => { output += data.toString(); });
+      proc.stderr?.on("data", () => {});
+      proc.on("close", () => resolve(output.trim()));
+      proc.on("error", () => resolve("{}"));
+    });
+    const userInfo = JSON.parse(infoResult || "{}");
+    return {
+      firstName: userInfo.first_name || "",
+      lastName: userInfo.last_name || "",
+      username: userInfo.username || "",
+      photoUrl: userInfo.photo_saved ? `/api/user/avatar/${userId}` : "",
+    };
+  } catch {
+    return { firstName: "", lastName: "", username: "", photoUrl: "" };
+  }
+}
+
+function sessionNeedsProfileRefresh(session: Request["session"]) {
+  return !session?.firstName && !session?.lastName && !session?.username && !session?.photoUrl;
+}
+
 function checkIpHitterLimit(ip: string): { allowed: boolean; used: number } {
   const today = getTodayStr();
   const entry = dailyIpHitterUsage.get(ip);
@@ -793,33 +833,11 @@ export async function registerRoutes(
     req.session.isAdmin = isAdminUser(uid);
     req.session.loggedInAt = Date.now();
 
-    try {
-      const botDir = path.resolve(process.cwd(), "bot");
-      const infoScript = path.join(botDir, "get_user_info.py");
-      const infoResult = await new Promise<string>((resolve) => {
-        let output = "";
-        const proc = spawn("python3", ["-u", infoScript, uid], {
-          cwd: botDir,
-          env: { ...process.env, PYTHONUNBUFFERED: "1" } as Record<string, string>,
-          timeout: 10000,
-        });
-        proc.stdout?.on("data", (data: Buffer) => { output += data.toString(); });
-        proc.stderr?.on("data", () => {});
-        proc.on("close", () => resolve(output.trim()));
-        proc.on("error", () => resolve("{}"));
-      });
-      const userInfo = JSON.parse(infoResult || "{}");
-      req.session.firstName = userInfo.first_name || "";
-      req.session.lastName = userInfo.last_name || "";
-      req.session.username = userInfo.username || "";
-      // Use the locally cached avatar (never expose the raw Telegram token URL)
-      req.session.photoUrl = userInfo.photo_saved ? `/api/user/avatar/${uid}` : "";
-    } catch {
-      req.session.firstName = "";
-      req.session.lastName = "";
-      req.session.username = "";
-      req.session.photoUrl = "";
-    }
+    const userInfo = await fetchTelegramUserInfo(uid);
+    req.session.firstName = userInfo.firstName;
+    req.session.lastName = userInfo.lastName;
+    req.session.username = userInfo.username;
+    req.session.photoUrl = userInfo.photoUrl;
 
     const displayName = [req.session.firstName, req.session.lastName].filter(Boolean).join(" ") || req.session.username || uid;
     addActivity({ type: "login", userName: displayName, userId: uid, message: `${displayName} just logged in` });
@@ -970,7 +988,7 @@ export async function registerRoutes(
     res.json({ ok: true });
   });
 
-  app.get("/api/auth/session", (req, res) => {
+  app.get("/api/auth/session", async (req, res) => {
     res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
     res.setHeader("Pragma", "no-cache");
     res.setHeader("Surrogate-Control", "no-store");
@@ -983,6 +1001,18 @@ export async function registerRoutes(
       return res.json({ authenticated: false, banned: true });
     }
     ensurePersistedUser(req.session.userId);
+    if (sessionNeedsProfileRefresh(req.session)) {
+      const userInfo = await fetchTelegramUserInfo(req.session.userId);
+      req.session.firstName = userInfo.firstName;
+      req.session.lastName = userInfo.lastName;
+      req.session.username = userInfo.username;
+      req.session.photoUrl = userInfo.photoUrl;
+      req.session.save((saveErr) => {
+        if (saveErr) {
+          console.error("Session profile save error:", saveErr);
+        }
+      });
+    }
     const pinConfigured = !!process.env.ADMIN_PIN;
     const adminPinVerified = !pinConfigured || !!req.session.adminPinVerified;
     res.json({
