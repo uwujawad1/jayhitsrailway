@@ -1,0 +1,118 @@
+
+> jayhits@1.0.0 dev
+> tsx server/index.ts
+
+[json-persistence] Restored 0 JSON files from database.
+[json-persistence] Auto-save every 300s enabled.
+Using PostgreSQL session store.
+4:56:53 PM [express] serving on port 5000
+4:56:55 PM [express] GET /api/activity/recent 304 in 1550ms :: {"events":[]}
+4:56:57 PM [express] GET /api/auth/session 200 in 2ms :: {"authenticated":false}
+4:57:00 PM [express] GET /api/auth/session 200 in 345ms :: {"authenticated":true,"user":{"userId":"8439924012","isAdmin":true,"adminPinVerified":true,"firstName":"Alex (Dm for cheap Accounts)","lastName":"","username":"uwualex6","photoUrl":"/api/user/avatar/8439924012"}}
+4:57:01 PM [express] GET /api/maintenance 304 in 345ms :: {"maintenance":false}
+4:57:01 PM [express] GET /api/activity/recent 200 in 347ms :: {"events":[]}
+4:57:01 PM [express] GET /api/user/membership 304 in 511ms :: {"member":true,"status":"admin","groupLink":"","channelLink":""}
+4:57:01 PM [express] GET /api/tools/saved-bins 304 in 345ms :: {"bins":[]}
+4:57:01 PM [express] GET /api/tools/hitter-history 304 in 346ms :: {"sessions":[]}
+4:57:04 PM [express] GET /api/user/dashboard 200 in 345ms :: {"totalUsers":1,"totalHits":0,"userHits":0,"userRank":1,"userRole":"Admin","premiumExpiry":null,"tier":"gold","tierLimits":{"dailyChecks":-1,"maxBatchCards":5000,"dailyShopifyChecks":-1,"massAccountMax":1000,"dailyFindsiteSearches":10,"parallelWorkers":5,"dailyHitterHits":-1},"dailyUsage":{"checks":0,"shopifyChecks":0,"findsiteSearches":0,"accountMassChecks":0,"hitterHits":0}}
+4:57:04 PM [express] GET /api/account-checkers/status 304 in 347ms :: {"crunchyroll":true,"xbox":true,"cyberghost":true,"duolingo":true,"hoichoi":true}
+4:57:10 PM [express] GET /api/user/tier 304 in 372ms :: {"tier":"gold","limits":{"dailyChecks":-1,"maxBatchCards":5000,"dailyShopifyChecks":-1,"massAccountMax":1000,"dailyFindsiteSearches":10,"parallelWorkers":5,"dailyHitterHits":-1},"usage":{"checks":0,"shopifyChecks":0,"findsiteSearches":0,"accountMassChecks":0}}
+4:57:10 PM [express] GET /api/user/settings 304 in 373ms :: {"proxies":[],"skKeys":[]}
+4:57:11 PM [express] GET /api/activity/recent 304 in 341ms :: {"events":[]}
+4:57:21 PM [express] GET /api/activity/recent 304 in 343ms :: {"events":[]}
+4:57:31 PM [express] GET /api/activity/recent 304 in 356ms :: {"events":[]}
+4:57:31 PM [express] GET /api/maintenance 304 in 357ms :: {"maintenance":false}
+4:57:33 PM [express] POST /api/auth/logout 200 in 358ms :: {"success":true}
+4:57:33 PM [express] GET /api/auth/session 200 in 173ms :: {"authenticated":false}
+4:57:44 PM [express] GET /api/bot/username 200 in 10911ms :: {"username":null}
+4:57:54 PM [express] POST /api/auth/request-otp 200 in 2534ms :: {"success":true,"message":"OTP sent to your Telegram"}
+4:58:01 PM [express] GET /api/maintenance 304 in 195ms :: {"maintenance":false}
+4:58:05 PM [express] POST /api/auth/verify-otp 200 in 5388ms :: {"success":true,"user":{"userId":"8439924012","isAdmin":true,"firstName":"Alex (Dm for cheap Accounts)","lastName":"","username":"uwualex6","photoUrl":"/api/user/avatar/8439924012"}}
+4:58:06 PM [express] GET /api/activity/recent 403 in 389ms :: {"message":"Admin PIN required","pinRequired":true}
+4:58:07 PM [express] GET /api/user/membership 304 in 1558ms :: {"member":true,"status":"admin","groupLink":"","channelLink":""}
+4:58:17 PM [express] GET /api/activity/recent 403 in 395ms :: {"message":"Admin PIN required","pinRequired":true}
+4:58:26 PM [express] GET /api/activity/recent 403 in 416ms :: {"message":"Admin PIN required","pinRequired":true}
+4:58:32 PM [express] GET /api/maintenance 304 in 404ms :: {"maintenance":false}
+4:58:33 PM [express] GET /api/user/tier 304 in 396ms :: {"tier":"gold","limits":{"dailyChecks":-1,"maxBatchCards":5000,"dailyShopifyChecks":-1,"massAccountMax":1000,"dailyFindsiteSearches":10,"parallelWorkers":5,"dailyHitterHits":-1},"usage":{"checks":0,"shopifyChecks":0,"findsiteSearches":0,"accountMassChecks":0}}
+4:58:36 PM [express] GET /api/activity/recent 403 in 610ms :: {"message":"Admin PIN required","pinRequired":true}
+4:58:38 PM [express] POST /api/user/settings/proxy/bulk 200 in 3509ms :: {"success":true,"added":10,"skipped":0,"invalid":0,"total":10,"proxies":["global.rotgb.711proxy.com:10000:USER488956-zone-custom-region-US-session-48157626-sessTime-5-sessAuto-1:nomikusa1","global.rotgb.711proxy.com:10000:USER488956-zone-custom-region-US-session-20286706-sessTime-5-sessAuto-1:nomikusa1","global.rotgb.711proxy.com:10000:USER488956-zone-custom-region-US-session-21977850-sessTime-5-sessAuto-1:nomikusa1","global.rotgb.711proxy.com:10000:USER488956-zone-custom-region-US-session-76864752-sessTime-5-sessAuto-1:nomikusa1","global.rotgb.711proxy.com:10000:USER488956-zone-custom-region-US-session-77085902-sessTime-5-sessAuto-1:nomikusa1","global.rotgb.711proxy.com:10000:USER488956-zone-custom-region-US-session-45400015-sessTime-5-sessAuto-1:nomikusa1","global.rotgb.711proxy.com:10000:USER488956-zone-custom-region-US-session-54215508-sessTime-5-sessAuto-1:nomikusa1","global.rotgb.711proxy.com:10000:USER488956-zone-custom-region-US-session-53541279-sessTime-5-sessAuto-1:nomikusa1","global.rotgb.711proxy.com:10000:USER488956-zone-custom-region-US-session-35500981-sessTime-5-sessAuto-1:nomikusa1","global.rotgb.711proxy.com:10000:USER488956-zone-custom-region-US-session-93737313-sessTime-5-sessAuto-1:nomikusa1"]}
+4:58:38 PM [express] GET /api/user/settings 200 in 395ms :: {"proxies":["global.rotgb.711proxy.com:10000:USER488956-zone-custom-region-US-session-48157626-sessTime-5-sessAuto-1:nomikusa1","global.rotgb.711proxy.com:10000:USER488956-zone-custom-region-US-session-20286706-sessTime-5-sessAuto-1:nomikusa1","global.rotgb.711proxy.com:10000:USER488956-zone-custom-region-US-session-21977850-sessTime-5-sessAuto-1:nomikusa1","global.rotgb.711proxy.com:10000:USER488956-zone-custom-region-US-session-76864752-sessTime-5-sessAuto-1:nomikusa1","global.rotgb.711proxy.com:10000:USER488956-zone-custom-region-US-session-77085902-sessTime-5-sessAuto-1:nomikusa1","global.rotgb.711proxy.com:10000:USER488956-zone-custom-region-US-session-45400015-sessTime-5-sessAuto-1:nomikusa1","global.rotgb.711proxy.com:10000:USER488956-zone-custom-region-US-session-54215508-sessTime-5-sessAuto-1:nomikusa1","global.rotgb.711proxy.com:10000:USER488956-zone-custom-region-US-session-53541279-sessTime-5-sessAuto-1:nomikusa1","global.rotgb.711proxy.com:10000:USER488956-zone-custom-region-US-session-35500981-sessTime-5-sessAuto-1:nomikusa1","global.rotgb.711proxy.com:10000:USER488956-zone-custom-region-US-session-93737313-sessTime-5-sessAuto-1:nomikusa1"],"skKeys":[]}
+4:58:46 PM [express] GET /api/activity/recent 403 in 391ms :: {"message":"Admin PIN required","pinRequired":true}
+4:58:51 PM [express] GET /api/skool/accounts 304 in 809ms :: {"accounts":[],"count":0}
+[json-persistence] Saved 26 JSON files to database.
+4:58:56 PM [express] GET /api/activity/recent 403 in 395ms :: {"message":"Admin PIN required","pinRequired":true}
+4:59:01 PM [express] POST /api/skool/accounts 200 in 2802ms :: {"added":true,"type":"global"}
+4:59:02 PM [express] GET /api/maintenance 304 in 399ms :: {"maintenance":false}
+4:59:03 PM [express] GET /api/skool/accounts 200 in 1880ms :: {"accounts":[{"email":"ogmfucekr@gmail.com","password":"123Ray123","type":"global","status":"unknown"}],"count":1}
+4:59:06 PM [express] GET /api/activity/recent 403 in 386ms :: {"message":"Admin PIN required","pinRequired":true}
+4:59:16 PM [express] GET /api/activity/recent 403 in 385ms :: {"message":"Admin PIN required","pinRequired":true}
+4:59:26 PM [express] GET /api/activity/recent 403 in 392ms :: {"message":"Admin PIN required","pinRequired":true}
+4:59:33 PM [express] GET /api/maintenance 304 in 392ms :: {"maintenance":false}
+4:59:36 PM [express] GET /api/activity/recent 403 in 389ms :: {"message":"Admin PIN required","pinRequired":true}
+4:59:46 PM [express] GET /api/activity/recent 403 in 530ms :: {"message":"Admin PIN required","pinRequired":true}
+4:59:56 PM [express] GET /api/activity/recent 403 in 382ms :: {"message":"Admin PIN required","pinRequired":true}
+5:00:03 PM [express] GET /api/maintenance 304 in 389ms :: {"maintenance":false}
+5:00:06 PM [express] GET /api/activity/recent 403 in 383ms :: {"message":"Admin PIN required","pinRequired":true}
+5:00:07 PM [express] GET /api/user/membership 304 in 384ms :: {"member":true,"status":"admin","groupLink":"","channelLink":""}
+5:00:16 PM [express] GET /api/activity/recent 403 in 384ms :: {"message":"Admin PIN required","pinRequired":true}
+5:00:26 PM [express] GET /api/activity/recent 403 in 429ms :: {"message":"Admin PIN required","pinRequired":true}
+5:00:34 PM [express] GET /api/maintenance 304 in 387ms :: {"maintenance":false}
+5:00:36 PM [express] GET /api/activity/recent 403 in 385ms :: {"message":"Admin PIN required","pinRequired":true}
+5:00:46 PM [express] GET /api/activity/recent 403 in 401ms :: {"message":"Admin PIN required","pinRequired":true}
+5:00:56 PM [express] GET /api/activity/recent 403 in 381ms :: {"message":"Admin PIN required","pinRequired":true}
+5:01:04 PM [express] GET /api/maintenance 304 in 386ms :: {"maintenance":false}
+5:01:06 PM [express] GET /api/activity/recent 403 in 388ms :: {"message":"Admin PIN required","pinRequired":true}
+5:01:15 PM [express] GET /api/check/batch 304 in 391ms :: []
+5:01:16 PM [express] GET /api/activity/recent 403 in 459ms :: {"message":"Admin PIN required","pinRequired":true}
+5:01:17 PM [express] GET /api/checker/gateways 304 in 2151ms :: [{"id":"st","name":"Stripe Auth $0","type":"auth","category":"auth","enabled":true,"premiumOnly":false},{"id":"skl","name":"Stripe Auth $0.1","type":"auth","category":"auth","enabled":true,"premiumOnly":false},{"id":"b3","name":"Braintree Auth","type":"auth","category":"auth","enabled":true,"premiumOnly":false},{"id":"vbv","name":"VBV Lookup","type":"auth","category":"auth","enabled":true,"premiumOnly":false},{"id":"an","name":"Authorize.net Auth","type":"auth","category":"auth","enabled":true,"premiumOnly":false},{"id":"skb","name":"SK Base Auth $0","type":"auth","category":"auth","enabled":true,"premiumOnly":false},{"id":"adn","name":"Adyen Auth","type":"auth","category":"auth","enabled":true,"premiumOnly":false},{"id":"rbc","name":"Stripe Auth $0 (RBC)","type":"auth","category":"auth","enabled":true,"premiumOnly":false},{"id":"cw","name":"Stripe Charge $6","type":"charge","category":"charge","enabled":true,"premiumOnly":false},{"id":"rz","name":"Razorpay Charge","type":"charge","category":"charge","enabled":true,"premiumOnly":false},{"id":"charge","name":"Stripe Charge SK","type":"charge","category":"charge","enabled":true,"premiumOnly":false},{"id":"pp","name":"PayPal Charge $0.01","type":"charge","category":"charge","enabled":true,"premiumOnly":false},{"id":"shp","name":"Shopify Native","type":"charge","category":"charge","enabled":true,"premiumOnly":false},{"id":"skl1","name":"Stripe Charge $1","type":"charge","category":"charge","enabled":true,"premiumOnly":false},{"id":"skl2","name":"Stripe Charge $7","type":"charge","category":"charge","enabled":true,"premiumOnly":false},{"id":"b3c","name":"Braintree Charge","type":"charge","category":"charge","enabled":true,"premiumOnly":false},{"id":"ppn","name":"PayPal Charge $1","type":"charge","category":"charge","enabled":true,"premiumOnly":false},{"id":"bnc","name":"PayPal Charge $1 (BNC)","type":"charge","category":"charge","enabled":true,"premiumOnly":false},{"id":"ch","name":"Stripe Charge €5","type":"charge","category":"charge","enabled":true,"premiumOnly":false},{"id":"isp","name":"Stripe Charge $25","type":"charge","category":"charge","enabled":true,"premiumOnly":false},{"id":"auto","name":"Stripe Random Charge","type":"charge","category":"charge","enabled":true,"premiumOnly":false},{"id":"azz","name":"Authorize.net Charge $1","type":"charge","category":"charge","enabled":true,"premiumOnly":false},{"id":"ppk","name":"PayPal Keybase $1","type":"charge","category":"charge","enabled":true,"premiumOnly":false}]
+5:01:20 PM [express] GET /api/check/batch 304 in 449ms :: []
+5:01:26 PM [express] GET /api/check/batch 304 in 388ms :: []
+5:01:26 PM [express] GET /api/activity/recent 403 in 386ms :: {"message":"Admin PIN required","pinRequired":true}
+5:01:35 PM [express] GET /api/maintenance 304 in 386ms :: {"maintenance":false}
+5:01:36 PM [express] GET /api/activity/recent 403 in 397ms :: {"message":"Admin PIN required","pinRequired":true}
+5:01:46 PM [express] GET /api/activity/recent 403 in 390ms :: {"message":"Admin PIN required","pinRequired":true}
+5:01:56 PM [express] GET /api/activity/recent 403 in 386ms :: {"message":"Admin PIN required","pinRequired":true}
+[json-persistence] Saved 26 JSON files to database.
+5:02:06 PM [express] GET /api/maintenance 304 in 385ms :: {"maintenance":false}
+5:02:07 PM [express] GET /api/activity/recent 403 in 1566ms :: {"message":"Admin PIN required","pinRequired":true}
+5:02:08 PM [express] GET /api/user/membership 304 in 394ms :: {"member":true,"status":"admin","groupLink":"","channelLink":""}
+5:02:16 PM [express] GET /api/activity/recent 403 in 391ms :: {"message":"Admin PIN required","pinRequired":true}
+5:02:26 PM [express] GET /api/activity/recent 403 in 508ms :: {"message":"Admin PIN required","pinRequired":true}
+5:02:36 PM [express] GET /api/activity/recent 403 in 396ms :: {"message":"Admin PIN required","pinRequired":true}
+5:02:36 PM [express] GET /api/maintenance 304 in 395ms :: {"maintenance":false}
+5:02:46 PM [express] GET /api/activity/recent 403 in 388ms :: {"message":"Admin PIN required","pinRequired":true}
+5:02:56 PM [express] GET /api/activity/recent 403 in 389ms :: {"message":"Admin PIN required","pinRequired":true}
+5:03:06 PM [express] GET /api/activity/recent 403 in 387ms :: {"message":"Admin PIN required","pinRequired":true}
+5:03:07 PM [express] GET /api/maintenance 304 in 393ms :: {"maintenance":false}
+5:03:16 PM [express] GET /api/activity/recent 403 in 389ms :: {"message":"Admin PIN required","pinRequired":true}
+5:03:26 PM [express] GET /api/activity/recent 403 in 398ms :: {"message":"Admin PIN required","pinRequired":true}
+5:03:36 PM [express] GET /api/activity/recent 403 in 388ms :: {"message":"Admin PIN required","pinRequired":true}
+5:03:37 PM [express] GET /api/maintenance 304 in 386ms :: {"maintenance":false}
+5:03:46 PM [express] GET /api/activity/recent 403 in 392ms :: {"message":"Admin PIN required","pinRequired":true}
+5:03:56 PM [express] GET /api/activity/recent 403 in 390ms :: {"message":"Admin PIN required","pinRequired":true}
+5:04:06 PM [express] GET /api/activity/recent 403 in 386ms :: {"message":"Admin PIN required","pinRequired":true}
+5:04:07 PM [express] GET /api/maintenance 304 in 395ms :: {"maintenance":false}
+5:04:08 PM [express] GET /api/user/membership 304 in 390ms :: {"member":true,"status":"admin","groupLink":"","channelLink":""}
+5:04:16 PM [express] GET /api/activity/recent 403 in 388ms :: {"message":"Admin PIN required","pinRequired":true}
+5:04:26 PM [express] GET /api/activity/recent 403 in 383ms :: {"message":"Admin PIN required","pinRequired":true}
+5:04:36 PM [express] GET /api/activity/recent 403 in 392ms :: {"message":"Admin PIN required","pinRequired":true}
+5:04:38 PM [express] GET /api/maintenance 304 in 392ms :: {"maintenance":false}
+5:04:46 PM [express] GET /api/activity/recent 403 in 383ms :: {"message":"Admin PIN required","pinRequired":true}
+5:04:56 PM [express] GET /api/activity/recent 403 in 388ms :: {"message":"Admin PIN required","pinRequired":true}
+5:05:06 PM [express] GET /api/activity/recent 403 in 392ms :: {"message":"Admin PIN required","pinRequired":true}
+5:05:08 PM [express] GET /api/maintenance 304 in 394ms :: {"maintenance":false}
+5:05:09 PM [express] GET /api/user/dashboard 304 in 419ms :: {"totalUsers":1,"totalHits":0,"userHits":0,"userRank":1,"userRole":"Admin","premiumExpiry":null,"tier":"gold","tierLimits":{"dailyChecks":-1,"maxBatchCards":5000,"dailyShopifyChecks":-1,"massAccountMax":1000,"dailyFindsiteSearches":10,"parallelWorkers":5,"dailyHitterHits":-1},"dailyUsage":{"checks":0,"shopifyChecks":0,"findsiteSearches":0,"accountMassChecks":0,"hitterHits":0}}
+5:05:16 PM [express] GET /api/activity/recent 403 in 389ms :: {"message":"Admin PIN required","pinRequired":true}
+5:05:26 PM [express] GET /api/activity/recent 403 in 386ms :: {"message":"Admin PIN required","pinRequired":true}
+5:05:36 PM [express] GET /api/activity/recent 403 in 386ms :: {"message":"Admin PIN required","pinRequired":true}
+5:05:39 PM [express] GET /api/maintenance 304 in 392ms :: {"maintenance":false}
+5:05:39 PM [express] GET /api/user/dashboard 304 in 394ms :: {"totalUsers":1,"totalHits":0,"userHits":0,"userRank":1,"userRole":"Admin","premiumExpiry":null,"tier":"gold","tierLimits":{"dailyChecks":-1,"maxBatchCards":5000,"dailyShopifyChecks":-1,"massAccountMax":1000,"dailyFindsiteSearches":10,"parallelWorkers":5,"dailyHitterHits":-1},"dailyUsage":{"checks":0,"shopifyChecks":0,"findsiteSearches":0,"accountMassChecks":0,"hitterHits":0}}
+5:05:46 PM [express] GET /api/activity/recent 403 in 386ms :: {"message":"Admin PIN required","pinRequired":true}
+5:05:56 PM [express] GET /api/activity/recent 403 in 392ms :: {"message":"Admin PIN required","pinRequired":true}
+[2m5:05:59 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/theme-provider.tsx, /src/index.css[22m
+[2m5:06:01 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/components/theme-provider.tsx[22m Could not Fast Refresh ("useTheme" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m5:06:01 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/components/theme-toggle.tsx[22m
+5:06:02 PM [express] GET /api/auth/session 200 in 390ms :: {"authenticated":true,"user":{"userId":"8439924012","isAdmin":true,"adminPinVerified":false,"firstName":"Alex (Dm for cheap Accounts)","lastName":"","username":"uwualex6","photoUrl":"/api/user/avatar/8439924012"}}
+5:06:03 PM [express] GET /api/user/membership 304 in 377ms :: {"member":true,"status":"admin","groupLink":"","channelLink":""}
+5:06:03 PM [express] GET /api/activity/recent 403 in 384ms :: {"message":"Admin PIN required","pinRequired":true}
+[2m5:06:06 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/theme-toggle.tsx[22m

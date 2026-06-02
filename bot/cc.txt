@@ -1,0 +1,323 @@
+4430400045394776|05|26|457 | APPROVED | Approved - do_not_honor | VISA DEBIT | US | 4776 [8.58s] | Stripe Charge $1 | -
+4693080251293177|06|27|617 | APPROVED | Approved - insufficient_funds | VISA PREPAID | MY | 3177 [15.27s] | Stripe Charge $1 | -
+4039952623351342|05|28|104 | APPROVED | Approved - insufficient_funds | VISA PREPAID | US | 1342 [6.47s] | Stripe Charge $1 | -
+4189530104004388|12|28|905 | APPROVED | Approved - insufficient_funds | VISA DEBIT | US | 4388 [6.17s] | Stripe Charge $1 | -
+4121749164855577|03|27|173 | APPROVED | Approved - do_not_honor | VISA CREDIT | US | 5577 [2.43s] | Stripe Charge $1 | -
+4852464762784857|11|28|518 | APPROVED | Approved - insufficient_funds | VISA PREPAID | US | 4857 [6.33s] | Stripe Charge $1 | -
+4862369636852574|09|26|689 | APPROVED | Approved - do_not_honor | VISA CREDIT | US | 2574 [5.65s] | Stripe Charge $1 | -
+4143980635397550|02|29|618 | APPROVED | Approved - insufficient_funds | VISA DEBIT | US | 7550 [6.31s] | Stripe Charge $1 | -
+4143980605270910|04|28|377 | APPROVED | Approved - insufficient_funds | VISA DEBIT | US | 0910 [6.54s] | Stripe Charge $1 | -
+5214160057214523|06|29|073 | APPROVED | Approved - insufficient_funds | MASTERCARD DEBIT | US | 4523 [7.04s] | Stripe Charge $1 | -
+4638460047157001|07|28|657 | APPROVED | Approved - insufficient_funds | VISA DEBIT | US | 7001 [5.62s] | Stripe Charge $1 | -
+4985032129325167|03|28|587 | APPROVED | Approved - insufficient_funds | VISA DEBIT | US | 5167 [8.96s] | Stripe Charge $1 | -
+4143980413214001|08|26|608 | APPROVED | Approved - insufficient_funds | VISA DEBIT | US | 4001 [6.53s] | Stripe Charge $1 | -
+4107930304411988|10|26|682 | APPROVED | Approved - pickup_card | VISA CREDIT | US | 1988 [9.63s] | Stripe Charge $1 | -
+5425430164164480|06|28|311 | APPROVED | Approved - insufficient_funds | MASTERCARD DEBIT | US | 4480 [6.86s] | Stripe Charge $1 | -
+4133310350186859|07|26|809 | APPROVED | Approved - insufficient_funds | VISA DEBIT | US | 6859 [6.68s] | Stripe Charge $1 | -
+4430400067225981|01|28|654 | CHARGED | Approved - Charged | VISA DEBIT | US | 5981 [2.93s] | Stripe 0.1$ | -
+4693080253186353|08|27|582 | CHARGED | Approved - Charged | VISA PREPAID | MY | 6353 [3.71s] | Stripe 0.1$ | -
+4693080253186353|08|27|582 | CHARGED | Approved - Charged | VISA PREPAID | MY | 6353 [5.56s] | Stripe 0.1$ | -
+4693080253186353|01|28|238 | APPROVED | Approved - 3DS Required | VISA PREPAID | MY | 6353 | Stripe 0.1$ | -
+4693080253186353|07|28|003 | APPROVED | Approved - 3DS Required | VISA PREPAID | MY | 6353 | Stripe 0.1$ | -
+4693080253186353|06|31|521 | APPROVED | Approved - 3DS Required | VISA PREPAID | MY | 6353 | Stripe 0.1$ | -
+4693080253186353|04|28|165 | APPROVED | Approved - 3DS Required | VISA PREPAID | MY | 6353 | Stripe 0.1$ | -
+4693080253186353|05|28|140 | APPROVED | Approved - 3DS Required | VISA PREPAID | MY | 6353 | Stripe 0.1$ | -
+4693080253186353|12|28|216 | APPROVED | Approved - 3DS Required | VISA PREPAID | MY | 6353 | Stripe 0.1$ | -
+4693080253186353|04|29|026 | APPROVED | Approved - 3DS Required | VISA PREPAID | MY | 6353 | Stripe 0.1$ | -
+3528180443823007|03|26|2778 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.32s] | Stripe Auth $0.1 | -
+3528225311628002|11|26|6948 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.48s] | Stripe Auth $0.1 | -
+3528225362140006|08|27|2438 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.51s] | Stripe Auth $0.1 | -
+3528225372356006|10|27|9451 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.51s] | Stripe Auth $0.1 | -
+3528225389305004|12|27|9898 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.52s] | Stripe Auth $0.1 | -
+3528228452785102|03|27|6146 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.47s] | Stripe Auth $0.1 | -
+3528228551821014|06|27|4418 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.52s] | Stripe Auth $0.1 | -
+3528318842562004|03|28|2408 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.52s] | Stripe Auth $0.1 | -
+3528318918261002|06|28|2838 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.47s] | Stripe Auth $0.1 | -
+3528318930570000|07|28|2298 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.52s] | Stripe Auth $0.1 | -
+3528336751141008|02|26|6678 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.31s] | Stripe Auth $0.1 | -
+3528569561340002|04|28|1921 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.53s] | Stripe Auth $0.1 | -
+3528570168560000|07|27|5598 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.31s] | Stripe Auth $0.1 | -
+3528597209438003|01|42|6202 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.51s] | Stripe Auth $0.1 | -
+3528599638629202|03|26|1198 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.52s] | Stripe Auth $0.1 | -
+3528599854929005|11|26|0088 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.31s] | Stripe Auth $0.1 | -
+3528708791438000|06|26|8631 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.52s] | Stripe Auth $0.1 | -
+3528730237210009|03|26|8768 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.47s] | Stripe Auth $0.1 | -
+3528730244632005|09|26|3631 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.52s] | Stripe Auth $0.1 | -
+3528730876833012|03|26|6394 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.51s] | Stripe Auth $0.1 | -
+3528736910378005|06|27|2188 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.32s] | Stripe Auth $0.1 | -
+3528739340181007|09|27|3728 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.48s] | Stripe Auth $0.1 | -
+3528910308628004|08|27|7398 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.5s] | Stripe Auth $0.1 | -
+3540056403811238|10|26|0998 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.5s] | Stripe Auth $0.1 | -
+3528904160450003|01|27|8438 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.52s] | Stripe Auth $0.1 | -
+5492522049271015|05|27|362 | APPROVED | Approved - 3DS Required | MASTERCARD CREDIT | AT | 1015 [2.7s] | Stripe Auth $0.1 | -
+5266415621987963|05|29|686 | APPROVED | Approved - 3DS Required | MASTERCARD CREDIT | AT | 7963 [1.87s] | Stripe Auth $0.1 | -
+4438779131204102|08|28|909 | APPROVED | Approved - 3DS Required | VISA CREDIT | AT | 4102 [2.05s] | Stripe Auth $0.1 | -
+4378982904524761|05|30|583 | APPROVED | Approved - 3DS Required | VISA CREDIT | AT | 4761 [1.89s] | Stripe Auth $0.1 | -
+5492526751107366|02|26|456 | APPROVED | Approved - 3DS Required | MASTERCARD CREDIT | AT | 7366 [2.03s] | Stripe Auth $0.1 | -
+5266250990638719|06|29|578 | APPROVED | Approved - 3DS Required | MASTERCARD CREDIT | AT | 8719 [2.02s] | Stripe Auth $0.1 | -
+5266251797220537|04|27|784 | APPROVED | Approved - 3DS Required | MASTERCARD CREDIT | AT | 0537 [1.96s] | Stripe Auth $0.1 | -
+5492522049271015|05|27|362 | APPROVED | Approved - 3DS Required | MASTERCARD CREDIT | AT | 1015 [3.25s] | Stripe Auth $0.1 | -
+4438779131204102|08|28|909 | APPROVED | Approved - 3DS Required | VISA CREDIT | AT | 4102 [2.42s] | Stripe Auth $0.1 | -
+5492526751107366|02|26|456 | APPROVED | Approved - 3DS Required | MASTERCARD CREDIT | AT | 7366 [1.18s] | Stripe Auth $0.1 | -
+5266250990638719|06|29|578 | APPROVED | Approved - 3DS Required | MASTERCARD CREDIT | AT | 8719 [3.27s] | Stripe Auth $0.1 | -
+5492522049271015|05|27|362 | APPROVED | Approved - 3DS Required | MASTERCARD CREDIT | AT | 1015 [1.26s] | Stripe Auth $0.1 | -
+5492526751107366|02|26|456 | APPROVED | Approved - 3DS Required | MASTERCARD CREDIT | AT | 7366 [1.03s] | Stripe Auth $0.1 | -
+5492522049271015|05|27|362 | APPROVED | Approved - 3DS Required | MASTERCARD CREDIT | AT | 1015 [1.27s] | Stripe Auth $0.1 | -
+4438779131204102|08|28|909 | APPROVED | Approved - 3DS Required | VISA CREDIT | AT | 4102 [1.08s] | Stripe Auth $0.1 | -
+5265580017837857|03|26|776 | APPROVED | Approved - 3DS Required | 526558 [30.83s] | PayPal Charge $1 | -
+4617729020157799|05|28|060 | APPROVED | Approved - 3DS Required | 461772 [37.85s] | PayPal Charge $1 | -
+4046023900381674|02|29|007 | APPROVED | Approved - fraudulent | VISA CREDIT | US | 1674 | Stripe Charge €5 | -
+5521152702841451|11|28|060 | CHARGED | Charged - Payment Successful €5 | CARD | 1451 | Stripe Charge €5 | -
+4046023900381674|02|29|007 | APPROVED | Approved - fraudulent | VISA CREDIT | US | 1674 [2.73s] | Stripe Charge €5 | -
+5521152702841451|11|28|060 | APPROVED | Approved - insufficient_funds | MASTERCARD CREDIT | MY | 1451 [22.98s] | Stripe Charge €5 | -
+4751441278518203|06|28|388 | APPROVED | Approved - fraudulent | VISA DEBIT | GB | 8203 | Stripe Charge €5 | -
+4929136407561002|06|28|180 | APPROVED | Approved - fraudulent | VISA CREDIT | GB | 1002 | Stripe Charge €5 | -
+4462722347341051|09|27|690 | APPROVED | Approved - 3DS Required | CARD | 1051 | Stripe Charge €5 | -
+5357780082051728|08|28|264 | APPROVED | Approved - fraudulent | MASTERCARD DEBIT | GB | 1728 | Stripe Charge €5 | -
+4147098848375028|08|28|750 | APPROVED | Approved - fraudulent | VISA CREDIT | US | 5028 [2.74s] | Stripe Charge €5 | -
+4147097767286505|08|29|579 | APPROVED | Approved - fraudulent | VISA CREDIT | US | 6505 [2.58s] | Stripe Charge €5 | -
+4037661163434598|12|28|802 | APPROVED | Approved - fraudulent | VISA CREDIT | US | 4598 [5.62s] | Stripe Charge €5 | -
+5407070037693034|07|28|485 | APPROVED | Approved - fraudulent | MASTERCARD CREDIT | US | 3034 [7.04s] | Stripe Charge €5 | -
+5392770013633840|04|27|716 | APPROVED | Approved - fraudulent | MASTERCARD CREDIT | US | 3840 [3.17s] | Stripe Charge €5 | -
+4100390192120422|12|27|883 | APPROVED | Approved - fraudulent | VISA CREDIT | US | 0422 [2.93s] | Stripe Charge €5 | -
+4037661524226774|02|29|733 | APPROVED | Approved - fraudulent | VISA CREDIT | US | 6774 [7.19s] | Stripe Charge €5 | -
+5524336617706365|07|27|899 | APPROVED | Approved - 3DS Required | CARD | 6365 [7.99s] | Stripe Charge €5 | -
+4189530104004388|12|28|905 | APPROVED | Approved - 3DS Required | CARD | 4388 [2.23s] | Stripe Charge €5 | -
+4100390700881184|07|28|776 | APPROVED | Approved - 3DS Required | CARD | 1184 [5.51s] | Stripe Charge €5 | -
+4121749164855577|03|27|173 | APPROVED | Approved - 3DS Required | CARD | 5577 [2.5s] | Stripe Charge €5 | -
+4100390631559388|09|28|353 | APPROVED | Approved - 3DS Required | CARD | 9388 [5.7s] | Stripe Charge €5 | -
+6011010259703224|08|29|081 | APPROVED | Approved - 3DS Required | CARD | 3224 [6.07s] | Stripe Charge €5 | -
+4388576183777757|05|29|740 | APPROVED | Approved - 3DS Required | CARD | 7757 [6.22s] | Stripe Charge €5 | -
+4862369636852574|09|26|689 | APPROVED | Approved - 3DS Required | CARD | 2574 [5.72s] | Stripe Charge €5 | -
+4388576169110338|06|28|873 | APPROVED | Approved - 3DS Required | CARD | 0338 [5.31s] | Stripe Charge €5 | -
+4852464762784857|11|28|518 | APPROVED | Approved - 3DS Required | CARD | 4857 [2.56s] | Stripe Charge €5 | -
+4232230242487374|03|26|080 | APPROVED | Approved - 3DS Required | CARD | 7374 [5.06s] | Stripe Charge €5 | -
+4588709002920286|12|26|612 | APPROVED | Approved - 3DS Required | CARD | 0286 [5.2s] | Stripe Charge €5 | -
+5108750383631504|02|27|158 | APPROVED | Approved - 3DS Required | CARD | 1504 [2.37s] | Stripe Charge €5 | -
+4031630876880369|12|28|144 | APPROVED | Approved - 3DS Required | CARD | 0369 [2.17s] | Stripe Charge €5 | -
+4744722125398877|01|29|270 | APPROVED | Approved - 3DS Required | CARD | 8877 [2.43s] | Stripe Charge €5 | -
+4737029188088794|11|27|918 | APPROVED | Approved - 3DS Required | CARD | 8794 [5.26s] | Stripe Charge €5 | -
+4403931554246976|09|27|833 | APPROVED | Approved - 3DS Required | CARD | 6976 [4.72s] | Stripe Charge €5 | -
+5437014069414426|09|27|649 | APPROVED | Approved - 3DS Required | CARD | 4426 [2.69s] | Stripe Charge €5 | -
+4100390779772645|12|28|694 | APPROVED | Approved - 3DS Required | CARD | 2645 [3.14s] | Stripe Charge €5 | -
+4266841445296427|11|28|869 | APPROVED | Approved - 3DS Required | CARD | 6427 [2.22s] | Stripe Charge €5 | -
+4266841327181721|10|27|897 | APPROVED | Approved - 3DS Required | CARD | 1721 [22.47s] | Stripe Charge €5 | -
+4266841393425499|12|27|576 | APPROVED | Approved - 3DS Required | CARD | 5499 [2.5s] | Stripe Charge €5 | -
+5155977820019843|07|28|421 | APPROVED | Approved - 3DS Required | CARD | 9843 [2.66s] | Stripe Charge €5 | -
+4580070107946512|06|25|958 | APPROVED | Approved - 3DS Required | CARD | 6512 [4.63s] | Stripe Charge €5 | -
+4143980635397550|02|29|618 | APPROVED | Approved - 3DS Required | CARD | 7550 [2.34s] | Stripe Charge €5 | -
+4100390559549791|09|25|259 | APPROVED | Approved - 3DS Required | CARD | 9791 [3.16s] | Stripe Charge €5 | -
+4266841866139155|03|30|085 | APPROVED | Approved - 3DS Required | CARD | 9155 [2.49s] | Stripe Charge €5 | -
+4465420558893822|01|28|865 | APPROVED | Approved - 3DS Required | CARD | 3822 [3.58s] | Stripe Charge €5 | -
+5524650083643872|09|26|397 | APPROVED | Approved - 3DS Required | CARD | 3872 [5.31s] | Stripe Charge €5 | -
+4479148286060646|02|29|452 | APPROVED | Approved - 3DS Required | CARD | 0646 [4.31s] | Stripe Charge €5 | -
+4266841804086567|02|29|285 | APPROVED | Approved - 3DS Required | CARD | 6567 [2.57s] | Stripe Charge €5 | -
+5108750361659931|09|27|536 | APPROVED | Approved - 3DS Required | CARD | 9931 [2.39s] | Stripe Charge €5 | -
+5249130005322446|06|25|591 | APPROVED | Approved - 3DS Required | CARD | 2446 [2.66s] | Stripe Charge €5 | -
+4701320066768934|03|30|249 | APPROVED | Approved - 3DS Required | CARD | 8934 [2.37s] | Stripe Charge €5 | -
+4100390465736318|06|28|398 | APPROVED | Approved - 3DS Required | CARD | 6318 [5.98s] | Stripe Charge €5 | -
+4266841735913061|09|28|312 | APPROVED | Approved - 3DS Required | CARD | 3061 [3.91s] | Stripe Charge €5 | -
+5152413008161036|03|29|248 | APPROVED | Approved - 3DS Required | CARD | 1036 [2.7s] | Stripe Charge €5 | -
+5181550126104870|03|29|515 | APPROVED | Approved - 3DS Required | CARD | 4870 [2.71s] | Stripe Charge €5 | -
+4355464705821784|05|28|239 | APPROVED | Approved - 3DS Required | CARD | 1784 [2.44s] | Stripe Charge €5 | -
+4769706056073542|10|27|547 | APPROVED | Approved - 3DS Required | CARD | 3542 [4.05s] | Stripe Charge €5 | -
+4100390124897402|04|27|311 | APPROVED | Approved - 3DS Required | CARD | 7402 [2.72s] | Stripe Charge €5 | -
+4100390574650137|04|27|027 | APPROVED | Approved - 3DS Required | CARD | 0137 [3.29s] | Stripe Charge €5 | -
+4737029210927571|03|29|912 | APPROVED | Approved - 3DS Required | CARD | 7571 [2.79s] | Stripe Charge €5 | -
+5524335921260028|01|29|681 | APPROVED | Approved - 3DS Required | CARD | 0028 [2.72s] | Stripe Charge €5 | -
+4100390678784295|09|27|044 | APPROVED | Approved - 3DS Required | CARD | 4295 [3.36s] | Stripe Charge €5 | -
+4266841781736390|09|28|286 | APPROVED | Approved - 3DS Required | CARD | 6390 [2.11s] | Stripe Charge €5 | -
+4266841867789214|04|30|793 | APPROVED | Approved - 3DS Required | CARD | 9214 [2.2s] | Stripe Charge €5 | -
+4347697122501288|03|30|528 | APPROVED | Approved - 3DS Required | CARD | 1288 [22.61s] | Stripe Charge €5 | -
+4266841804493268|02|29|590 | APPROVED | Approved - 3DS Required | CARD | 3268 [5.26s] | Stripe Charge €5 | -
+4159780911112926|02|28|513 | APPROVED | Approved - 3DS Required | CARD | 2926 [2.59s] | Stripe Charge €5 | -
+4020870018969125|10|25|551 | APPROVED | Approved - 3DS Required | CARD | 9125 [2.94s] | Stripe Charge €5 | -
+4266841800849505|01|29|984 | APPROVED | Approved - 3DS Required | CARD | 9505 [2.16s] | Stripe Charge €5 | -
+5424181489738497|06|25|836 | APPROVED | Approved - 3DS Required | CARD | 8497 [5.37s] | Stripe Charge €5 | -
+4100390630105506|08|27|036 | APPROVED | Approved - 3DS Required | CARD | 5506 [2.83s] | Stripe Charge €5 | -
+4143980605270910|04|28|377 | APPROVED | Approved - 3DS Required | CARD | 0910 [6.11s] | Stripe Charge €5 | -
+4266841788090213|10|28|176 | APPROVED | Approved - 3DS Required | CARD | 0213 [2.44s] | Stripe Charge €5 | -
+4465420626186894|11|28|894 | APPROVED | Approved - 3DS Required | CARD | 6894 [2.57s] | Stripe Charge €5 | -
+6011004907820381|08|29|184 | APPROVED | Approved - 3DS Required | CARD | 0381 [2.36s] | Stripe Charge €5 | -
+4151582027338181|10|28|610 | APPROVED | Approved - 3DS Required | CARD | 8181 [6.03s] | Stripe Charge €5 | -
+5443173380750843|03|30|411 | APPROVED | Approved - 3DS Required | CARD | 0843 [2.46s] | Stripe Charge €5 | -
+4100390616389835|01|28|750 | APPROVED | Approved - 3DS Required | CARD | 9835 [5.2s] | Stripe Charge €5 | -
+4100390647969845|02|28|888 | APPROVED | Approved - 3DS Required | CARD | 9845 [3.11s] | Stripe Charge €5 | -
+4266841723156426|06|27|217 | APPROVED | Approved - 3DS Required | CARD | 6426 [4.85s] | Stripe Charge €5 | -
+5178059428667050|01|28|872 | APPROVED | Approved - 3DS Required | CARD | 7050 [24.08s] | Stripe Charge €5 | -
+4465421574955199|05|28|700 | APPROVED | Approved - 3DS Required | CARD | 5199 [2.5s] | Stripe Charge €5 | -
+6011499494006628|08|26|236 | APPROVED | Approved - 3DS Required | CARD | 6628 [2.4s] | Stripe Charge €5 | -
+4266841829585684|07|29|430 | APPROVED | Approved - 3DS Required | CARD | 5684 [2.32s] | Stripe Charge €5 | -
+4266841348397058|12|27|293 | APPROVED | Approved - 3DS Required | CARD | 7058 [2.18s] | Stripe Charge €5 | -
+5332480148822366|02|27|806 | APPROVED | Approved - 3DS Required | CARD | 2366 [2.56s] | Stripe Charge €5 | -
+4147181586660916|11|28|901 | APPROVED | Approved - 3DS Required | CARD | 0916 [4.33s] | Stripe Charge €5 | -
+4468510000109160|01|26|110 | APPROVED | Approved - 3DS Required | CARD | 9160 [5.27s] | Stripe Charge €5 | -
+4147768576458077|04|27|612 | APPROVED | Approved - 3DS Required | CARD | 8077 [25.57s] | Stripe Charge €5 | -
+5214160057214523|06|29|073 | APPROVED | Approved - 3DS Required | CARD | 4523 [2.44s] | Stripe Charge €5 | -
+4033060000373966|04|28|798 | APPROVED | Approved - 3DS Required | CARD | 3966 [4.09s] | Stripe Charge €5 | -
+4638460047157001|07|28|657 | APPROVED | Approved - 3DS Required | CARD | 7001 [2.95s] | Stripe Charge €5 | -
+4100390700795624|04|28|018 | APPROVED | Approved - 3DS Required | CARD | 5624 [3.66s] | Stripe Charge €5 | -
+5178059710168874|06|28|074 | APPROVED | Approved - 3DS Required | CARD | 8874 [2.14s] | Stripe Charge €5 | -
+4143980526860070|12|26|848 | APPROVED | Approved - 3DS Required | CARD | 0070 [5.77s] | Stripe Charge €5 | -
+5178057819729976|06|26|489 | APPROVED | Approved - 3DS Required | CARD | 9976 [3.46s] | Stripe Charge €5 | -
+4108480215911212|01|26|370 | APPROVED | Approved - 3DS Required | CARD | 1212 [5.07s] | Stripe Charge €5 | -
+4100390755147432|12|27|865 | APPROVED | Approved - 3DS Required | CARD | 7432 [2.31s] | Stripe Charge €5 | -
+5178059245634556|10|28|256 | APPROVED | Approved - 3DS Required | CARD | 4556 [2.54s] | Stripe Charge €5 | -
+4108480119114251|05|27|005 | APPROVED | Approved - 3DS Required | CARD | 4251 [2.44s] | Stripe Charge €5 | -
+4931930030143105|08|27|050 | APPROVED | Approved - 3DS Required | CARD | 3105 [3.96s] | Stripe Charge €5 | -
+4108480075669967|09|25|352 | APPROVED | Approved - 3DS Required | CARD | 9967 [3.04s] | Stripe Charge €5 | -
+4400665848623912|08|27|284 | APPROVED | Approved - 3DS Required | CARD | 3912 [2.57s] | Stripe Charge €5 | -
+5178058638652654|08|26|875 | APPROVED | Approved - 3DS Required | CARD | 2654 [2.77s] | Stripe Charge €5 | -
+5178058112952570|08|28|662 | APPROVED | Approved - 3DS Required | CARD | 2570 [3.1s] | Stripe Charge €5 | -
+5178058331136906|09|26|081 | APPROVED | Approved - 3DS Required | CARD | 6906 [3.57s] | Stripe Charge €5 | -
+5178057563670939|03|28|378 | APPROVED | Approved - 3DS Required | CARD | 0939 [7.69s] | Stripe Charge €5 | -
+5178058597829608|09|29|603 | APPROVED | Approved - 3DS Required | CARD | 9608 [6.18s] | Stripe Charge €5 | -
+5178057954000076|03|27|494 | APPROVED | Approved - 3DS Required | CARD | 0076 [2.89s] | Stripe Charge €5 | -
+5178059683385802|09|28|841 | APPROVED | Approved - 3DS Required | CARD | 5802 [3.45s] | Stripe Charge €5 | -
+5178058668899415|02|29|291 | APPROVED | Approved - 3DS Required | CARD | 9415 [2.33s] | Stripe Charge €5 | -
+5178059710168874|06|28|074 | APPROVED | Approved - 3DS Required | CARD | 8874 [2.31s] | Stripe Charge €5 | -
+5178058610355359|06|28|015 | APPROVED | Approved - 3DS Required | CARD | 5359 [7.69s] | Stripe Charge €5 | -
+5178059428667050|01|28|872 | APPROVED | Approved - 3DS Required | CARD | 7050 [8.7s] | Stripe Charge €5 | -
+5178059245634556|10|28|256 | APPROVED | Approved - 3DS Required | CARD | 4556 [3.05s] | Stripe Charge €5 | -
+5178057697961857|03|27|106 | APPROVED | Approved - 3DS Required | CARD | 1857 [4.52s] | Stripe Charge €5 | -
+5178057819729976|06|26|489 | APPROVED | Approved - 3DS Required | CARD | 9976 [8.65s] | Stripe Charge €5 | -
+5178059700687602|10|25|103 | APPROVED | Approved - 3DS Required | CARD | 7602 [4.52s] | Stripe Charge €5 | -
+5178057918554960|04|28|983 | APPROVED | Approved - 3DS Required | CARD | 4960 [2.79s] | Stripe Charge €5 | -
+5178058413737175|06|29|174 | APPROVED | Approved - 3DS Required | CARD | 7175 [3.35s] | Stripe Charge €5 | -
+5178059038276888|06|29|470 | APPROVED | Approved - 3DS Required | CARD | 6888 [4.27s] | Stripe Charge €5 | -
+5178057914516740|08|27|416 | APPROVED | Approved - 3DS Required | CARD | 6740 [2.47s] | Stripe Charge €5 | -
+5178059216351453|12|26|647 | APPROVED | Approved - 3DS Required | CARD | 1453 [3.07s] | Stripe Charge €5 | -
+5178059570850439|12|26|516 | APPROVED | Approved - 3DS Required | CARD | 0439 [5.71s] | Stripe Charge €5 | -
+5178058747743881|05|27|904 | APPROVED | Approved - 3DS Required | CARD | 3881 [3.41s] | Stripe Charge €5 | -
+5178059360634431|10|28|588 | APPROVED | Approved - 3DS Required | CARD | 4431 [2.76s] | Stripe Charge €5 | -
+5178059971673307|06|29|154 | APPROVED | Approved - 3DS Required | CARD | 3307 [6.36s] | Stripe Charge €5 | -
+5178059853459817|10|27|486 | APPROVED | Approved - 3DS Required | CARD | 9817 [4.03s] | Stripe Charge €5 | -
+5178058881423068|09|29|687 | APPROVED | Approved - 3DS Required | CARD | 3068 [3.11s] | Stripe Charge €5 | -
+5178058878970212|06|27|398 | APPROVED | Approved - 3DS Required | CARD | 0212 [2.32s] | Stripe Charge €5 | -
+5178058871860089|05|29|668 | APPROVED | Approved - 3DS Required | CARD | 0089 [4.5s] | Stripe Charge €5 | -
+5178058873466455|06|27|623 | APPROVED | Approved - 3DS Required | CARD | 6455 [4.37s] | Stripe Charge €5 | -
+5178058872419406|06|28|001 | APPROVED | Approved - 3DS Required | CARD | 9406 [2.21s] | Stripe Charge €5 | -
+5178058880633766|06|29|986 | APPROVED | Approved - 3DS Required | CARD | 3766 [4.4s] | Stripe Charge €5 | -
+5178059139288907|06|25|202 | APPROVED | Approved - 3DS Required | CARD | 8907 [2.41s] | Stripe Charge €5 | -
+5178058869239932|11|27|072 | APPROVED | Approved - 3DS Required | CARD | 9932 [2.62s] | Stripe Charge €5 | -
+5178058483397876|09|25|643 | APPROVED | Approved - 3DS Required | CARD | 7876 [2.17s] | Stripe Charge €5 | -
+5178057732128546|06|28|673 | APPROVED | Approved - 3DS Required | CARD | 8546 [2.43s] | Stripe Charge €5 | -
+5178059637097743|09|28|971 | APPROVED | Approved - 3DS Required | CARD | 7743 [3.99s] | Stripe Charge €5 | -
+5178059381531657|12|28|975 | APPROVED | Approved - 3DS Required | CARD | 1657 [6.55s] | Stripe Charge €5 | -
+5178059938452589|09|29|270 | APPROVED | Approved - 3DS Required | CARD | 2589 [3.86s] | Stripe Charge €5 | -
+5178057506235840|04|29|198 | APPROVED | Approved - 3DS Required | CARD | 5840 [2.47s] | Stripe Charge €5 | -
+5178058066189997|10|28|959 | APPROVED | Approved - 3DS Required | CARD | 9997 [2.55s] | Stripe Charge €5 | -
+5178059782683453|07|28|902 | APPROVED | Approved - 3DS Required | CARD | 3453 [2.46s] | Stripe Charge €5 | -
+5178058461331392|10|28|369 | APPROVED | Approved - 3DS Required | CARD | 1392 [2.99s] | Stripe Charge €5 | -
+5178058178847656|09|26|081 | APPROVED | Approved - 3DS Required | CARD | 7656 [3.36s] | Stripe Charge €5 | -
+5178058221326666|07|28|979 | APPROVED | Approved - 3DS Required | CARD | 6666 [2.39s] | Stripe Charge €5 | -
+5178058236392620|05|29|596 | APPROVED | Approved - 3DS Required | CARD | 2620 [2.1s] | Stripe Charge €5 | -
+5178057550580380|07|29|472 | APPROVED | Approved - 3DS Required | CARD | 0380 [5.88s] | Stripe Charge €5 | -
+5178059169511327|02|26|456 | APPROVED | Approved - 3DS Required | CARD | 1327 [2.37s] | Stripe Charge €5 | -
+5178059722813376|11|27|373 | APPROVED | Approved - 3DS Required | CARD | 3376 [2.45s] | Stripe Charge €5 | -
+5178057725367317|06|25|379 | APPROVED | Approved - 3DS Required | CARD | 7317 [2.47s] | Stripe Charge €5 | -
+5178059473567684|02|28|355 | APPROVED | Approved - 3DS Required | CARD | 7684 [2.86s] | Stripe Charge €5 | -
+5178058370743190|02|28|610 | APPROVED | Approved - 3DS Required | CARD | 3190 [2.44s] | Stripe Charge €5 | -
+5178058552071238|02|26|532 | APPROVED | Approved - fraudulent | MASTERCARD CREDIT | US | 1238 [3.34s] | Stripe Charge €5 | -
+5178058384881119|11|28|118 | APPROVED | Approved - 3DS Required | CARD | 1119 [23.85s] | Stripe Charge €5 | -
+5178058969289241|07|29|078 | APPROVED | Approved - 3DS Required | CARD | 9241 [6.1s] | Stripe Charge €5 | -
+5178059800259930|04|27|933 | APPROVED | Approved - 3DS Required | CARD | 9930 [6.07s] | Stripe Charge €5 | -
+5178058145237148|04|28|464 | APPROVED | Approved - 3DS Required | CARD | 7148 [2.4s] | Stripe Charge €5 | -
+5178058248419379|07|28|041 | APPROVED | Approved - 3DS Required | CARD | 9379 [2.09s] | Stripe Charge €5 | -
+5178058559238830|10|26|944 | APPROVED | Approved - 3DS Required | CARD | 8830 [2.54s] | Stripe Charge €5 | -
+5178059607323665|06|29|837 | APPROVED | Approved - 3DS Required | CARD | 3665 [2.92s] | Stripe Charge €5 | -
+5178059319537933|02|29|519 | APPROVED | Approved - 3DS Required | CARD | 7933 [2.19s] | Stripe Charge €5 | -
+5178058910044802|07|29|933 | APPROVED | Approved - 3DS Required | CARD | 4802 [6.52s] | Stripe Charge €5 | -
+5178059955794996|04|28|020 | APPROVED | Approved - 3DS Required | CARD | 4996 [6.56s] | Stripe Charge €5 | -
+5178057788153588|07|27|188 | APPROVED | Approved - 3DS Required | CARD | 3588 [26.99s] | Stripe Charge €5 | -
+5178057774224021|03|28|361 | APPROVED | Approved - 3DS Required | CARD | 4021 [2.59s] | Stripe Charge €5 | -
+4217835047980768|08|27|198 | APPROVED | Approved - 3DS Required | CARD | 0768 [2.58s] | Stripe Charge €5 | -
+4217832010121223|06|26|339 | APPROVED | Approved - 3DS Required | CARD | 1223 [2.69s] | Stripe Charge €5 | -
+4217834092093403|01|27|938 | APPROVED | Approved - 3DS Required | CARD | 3403 [3.73s] | Stripe Charge €5 | -
+4217835083795930|10|28|428 | APPROVED | Approved - 3DS Required | CARD | 5930 [2.53s] | Stripe Charge €5 | -
+4217834076758575|07|26|340 | APPROVED | Approved - 3DS Required | CARD | 8575 [2.78s] | Stripe Charge €5 | -
+4217836001529989|11|27|137 | APPROVED | Approved - 3DS Required | CARD | 9989 [6.33s] | Stripe Charge €5 | -
+4217834064564449|09|28|042 | APPROVED | Approved - 3DS Required | CARD | 4449 [2.53s] | Stripe Charge €5 | -
+4217832076047973|10|28|082 | APPROVED | Approved - 3DS Required | CARD | 7973 [8.41s] | Stripe Charge €5 | -
+4217834040136346|06|28|608 | APPROVED | Approved - 3DS Required | CARD | 6346 [2.81s] | Stripe Charge €5 | -
+4217836003707880|07|27|522 | APPROVED | Approved - 3DS Required | CARD | 7880 [2.41s] | Stripe Charge €5 | -
+4217834048785144|10|25|719 | APPROVED | Approved - 3DS Required | CARD | 5144 [4.26s] | Stripe Charge €5 | -
+4632252042643523|01|28|127 | APPROVED | Approved - 3DS Required | CARD | 3523 | Stripe Charge €5 | -
+5196032170183426|04|28|038 | APPROVED | Approved - 3DS Required | CARD | 3426 | Stripe Charge €5 | -
+4632252042643523|01|28|127 | APPROVED | Approved - 3DS Required | CARD | 3523 | Stripe Charge €5 | -
+5196032170183426|04|28|038 | APPROVED | Approved - 3DS Required | CARD | 3426 | Stripe Charge €5 | -
+4391370028151112|11|26|077 | APPROVED | Approved - 3DS Required | CARD | 1112 [3.23s] | Stripe Charge €5 | -
+4391370028151112|11|26|000 | APPROVED | Approved - 3DS Required | CARD | 1112 [3.04s] | Stripe Charge €5 | -
+4632252042643523|01|28|127 | APPROVED | Approved - 3DS Required | CARD | 3523 | Stripe Charge €5 | -
+5196032170183426|04|28|038 | APPROVED | Approved - 3DS Required | CARD | 3426 | Stripe Charge €5 | -
+4632252042643523|01|28|127 | APPROVED | Approved - 3DS Required | CARD | 3523 | Stripe Charge €5 | -
+5196032170183426|04|28|038 | APPROVED | Approved - 3DS Required | CARD | 3426 | Stripe Charge €5 | -
+4046786725972220|02|28|938 | APPROVED | Approved - 3DS Required | CARD | 2220 [2.74s] | Stripe Charge €5 | -
+5196032170183426|04|28|038 | APPROVED | Approved - 3DS Required | CARD | 3426 | Stripe Charge €5 | -
+4632252042643523|01|28|127 | APPROVED | Approved - 3DS Required | CARD | 3523 | Stripe Charge €5 | -
+5196032170183426|04|28|038 | APPROVED | Approved - 3DS Required | CARD | 3426 | Stripe Charge €5 | -
+4632252042643523|01|28|127 | APPROVED | Approved - 3DS Required | CARD | 3523 | Stripe Charge €5 | -
+4217836073675991|06|27|055 | APPROVED | Insufficient Funds - INSUFFICIENT_FUNDS | shopify_payments | 11.04
+5155999952831274|04|27|756 | APPROVED | Insufficient Funds - INSUFFICIENT_FUNDS | shopify_payments | 13.0
+4031630743094392|05|29|174 | APPROVED | 3DS Required | shopify_payments | 18.42
+4143980475663079|12|27|662 | APPROVED | 3DS Required | shopify_payments | 37.9
+5275190041818028|01|29|305 | APPROVED | CCN Live - Invalid CVV | authorize.net | 16.0
+4031630887705696|11|28|522 | APPROVED | 3DS Required | shopify_payments | 55.84
+4031630764106034|05|29|825 | APPROVED | 3DS Required | shopify_payments | 15.48
+4031630456973311|12|28|634 | APPROVED | 3DS Required | shopify_payments | 55.84
+4693080253828822|09|27|597 | APPROVED | Approved - insufficient_funds | VISA PREPAID | MY | 8822 | Stripe Charge €5 | -
+4340762011672082|04|28|656 | APPROVED | Approved - insufficient_funds | VISA DEBIT | TH | 2082 | Stripe Charge €5 | -
+4585824000422962|09|28|615 | APPROVED | Approved - 3DS Required | CARD | 2962 | Stripe Charge €5 | -
+4687791054838780|11|28|123 | APPROVED | Approved - 3DS Required | CARD | 8780 | Stripe Charge €5 | -
+4340762000510152|10|27|936 | APPROVED | Approved - fraudulent | VISA DEBIT | TH | 0152 | Stripe Charge €5 | -
+4895040588887816|12|27|850 | APPROVED | Approved - 3DS Required | CARD | 7816 | Stripe Charge €5 | -
+5208130001653454|08|27|4788 | APPROVED | Declined - invalid_cvc: Your card's security code is invalid. [0.3s] | Stripe Charge $6 | -
+4059986107453351|12|29|951 | APPROVED | Approved - Card Validated (no forex) | Network: Visa | Type: debit | Country: MY | Issuer: BSNA [11.03s] | Razorpay Auth | -
+5356864417248299|12|26|104 | APPROVED | Approved - Card Validated (no forex) | Network: MasterCard | Type: debit | Country: AT [48.74s] | Razorpay Auth | -
+5356850481428875|12|27|098 | APPROVED | Approved - Card Validated (no forex) | Network: MasterCard | Type: debit | Country: AT | Razorpay Auth | -
+356580370117872|03|28|000 | APPROVED | Approved - Card Validated (no forex) | Network: American Express | Type: credit | Country: JP | Issuer: NJCB | Razorpay Auth | -
+5356850481428875|12|27|888 | APPROVED | Approved - Card Validated (no forex) | Network: MasterCard | Type: debit | Country: AT [9.2s] | Razorpay Auth | -
+356580370117872|03|28|000 | APPROVED | Approved - PM Created | JCB credit (TW) [0.42s] | Stripe Auth $0 | -
+5356862160948891|12|26|595 | APPROVED | Approved - PM Created | MASTERCARD debit (AT) [0.55s] | Stripe Auth $0 | -
+5356820284282530|09|31|481 | APPROVED | Approved - PM Created | MASTERCARD debit (SE) [0.41s] | Stripe Auth $0 | -
+4160210844363443|08|27|919 | APPROVED | Approved - PM Created (visa) [1.11s] | Stripe Auth $0 | -
+5539792101192954|05|29|012 | APPROVED | Approved - Card Tokenized Successfully ✅ [0.82s] | Authorize.net Auth $0 | -
+5539792101192954|05|29|000 | APPROVED | Approved - Card Tokenized Successfully ✅ [1.41s] | Authorize.net Auth $0 | -
+5539792101192954|05|29|000 | APPROVED | Approved - CCN Live - This transaction has been declined. [7.07s] | Authorize.net Charge $1 | -
+4842810339157105|03|28|973 | APPROVED | Approved - CCN Live - This transaction has been declined. [6.23s] | Authorize.net Charge $1 | -
+5356668067543606|03|26|527 | APPROVED | Approved - CCN Live - This transaction has been declined. | Authorize.net Charge $1 | -
+5356850481428875|12|27|098 | APPROVED | Approved - CCN Live - This transaction has been declined. | Authorize.net Charge $1 | -
+5356864417248299|12|26|104 | APPROVED | Approved - CCN Live - This transaction has been declined. | Authorize.net Charge $1 | -
+5521152702841451|11|27|765 | APPROVED | Approved - CCN Live - This transaction has been declined. [6.46s] | Authorize.net Charge $1 | -
+5521152702841451|11|27|765 | APPROVED | Approved - Transaction Approved [6.69s] | Authorize.net Charge $1 | -
+5539792101192954|05|29|012 | APPROVED | Approved - Transaction Approved [6.01s] | Authorize.net Charge $1 | -
+5539792101192954|05|29|012 | APPROVED | Approved - Transaction Approved [6.25s] | Authorize.net Charge $1 | -
+5539792101192954|05|27|898 | APPROVED | Approved - Transaction Approved [6.19s] | Authorize.net Charge $1 | -
+4549240600025037|09|31|987 | APPROVED | Approved - Transaction Approved [5.52s] | Authorize.net Charge $1 | -
+5160750018938048|05|27|159 | APPROVED | Approved - Transaction Approved [5.58s] | Authorize.net Charge $1 | -
+4180160071314369|12|26|833 | APPROVED | Approved - Transaction Approved [5.99s] | Authorize.net Charge $1 | -
+5539792101192954|05|27|898 | APPROVED | Approved - Transaction Approved [6.68s] | Authorize.net Charge $1 | -
+374355127358451|03|32|4708 | APPROVED | Approved - Card Valid | AMERICAN_EXPRESS | CREDIT | US | 3DS [0.54s] | Adyen Auth | -
+5333171125605929|12|28|436 | APPROVED | Approved - 3DS Required (CCN Live) | 533317 [2.9s] | PayPal Keybase $1 | -
+5178017519056138|03|31|174 | CHARGED | Approved - Charged $1 | 517801 [3.86s] | PayPal Keybase $1 | -
+4609961014194757|03|27|482 | APPROVED | Approved - 3DS Required (CCN Live) | 460996 [2.94s] | PayPal Keybase $1 | -
+5343480377242663|09|29|194 | APPROVED | Declined - EXISTING_ACCOUNT_RESTRICTED | 534348 [1.45s] | PayPal Keybase $1 | -
+4585821355323233|06|26|747 | APPROVED | Declined - EXISTING_ACCOUNT_RESTRICTED | 458582 [1.35s] | PayPal Keybase $1 | -
+5488093701175007|03|28|658 | APPROVED | Declined - EXISTING_ACCOUNT_RESTRICTED | 548809 [1.36s] | PayPal Keybase $1 | -
+5425430145006941|05|29|413 | APPROVED | Declined - EXISTING_ACCOUNT_RESTRICTED | 542543 [1.37s] | PayPal Keybase $1 | -
+5573778000369352|07|30|890 | APPROVED | Declined - EXISTING_ACCOUNT_RESTRICTED | 557377 [1.41s] | PayPal Keybase $1 | -
+5326780010371055|02|26|846 | APPROVED | Declined - EXISTING_ACCOUNT_RESTRICTED | 532678 [1.34s] | PayPal Keybase $1 | -
+5203539134763375|10|26|740 | APPROVED | Declined - EXISTING_ACCOUNT_RESTRICTED | 520353 [1.2s] | PayPal Keybase $1 | -
+4232232141288622|09|27|937 | APPROVED | Declined - EXISTING_ACCOUNT_RESTRICTED | 423223 [1.39s] | PayPal Keybase $1 | -
+5178017519056138|03|31|174 | APPROVED | Approved - 3DS Required (CCN Live) | 517801 [34.92s] | PayPal Keybase $1 | -
+4365091580698793|02|29|626 | APPROVED | Approved - 3DS Required (CCN Live) | 436509 [3.22s] | PayPal Keybase $1 | -
+4609961014194757|03|27|482 | APPROVED | Declined - EXISTING_ACCOUNT_RESTRICTED | 460996 [1.25s] | PayPal Keybase $1 | -
+5343480377242663|09|29|194 | APPROVED | Declined - EXISTING_ACCOUNT_RESTRICTED | 534348 [1.26s] | PayPal Keybase $1 | -
+4585821355323233|06|26|747 | APPROVED | Declined - EXISTING_ACCOUNT_RESTRICTED | 458582 [1.44s] | PayPal Keybase $1 | -
+5178017519056138|03|31|174 | APPROVED | Approved - 3DS Required (CCN Live) | 517801 [4.11s] | PayPal Keybase $1 | -
+4970407164551645|10|26|905 | APPROVED | Approved - 3DS Required (CCN Live) | $1.00 USD | Order #2JS54603C43840602 | 497040 [6.85s] | PayPal Keybase $1 | -
+4970407164551645|10|26|905 | APPROVED | Approved - 3DS Required (CCN Live) | $1.00 USD | Order #64844041V0364492L | 497040 [3.39s] | PayPal Keybase $1 | -
+5132831076891231|05|27|854 | APPROVED | Declined - EXISTING_ACCOUNT_RESTRICTED | 513283 [2.38s] | PayPal Keybase $1 | -
+4970407164551645|10|26|905 | APPROVED | Approved - 3DS Required (CCN Live) | $1.00 USD | Order #62M697842V8288544 | 497040 | PayPal Keybase $1 | -
+4377660102176474|09|28|964 | APPROVED | Approved - 3DS Required (CCN Live) | $1.00 USD | Order #7EB699640Y517131K | 437766 | PayPal Keybase $1 | -
+4332970007322345|06|28|862 | APPROVED | Approved - insufficient_funds $1.0 [9.7s] | Stripe Random Charge | -

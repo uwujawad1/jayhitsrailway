@@ -1,0 +1,5 @@
+npm warn Unknown project config "auto-install-peers". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+A PostCSS plugin did not pass the `from` option to `postcss.parse`. This may cause imported assets to be incorrectly transformed. If you've recently added a PostCSS plugin that raised this warning, please contact the package author to fix the issue.
+[2m5:06:06 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to load url /src/components/theme-toggle.tsx (resolved id: E:/Hitchk-Workflow/hitchk-app/client/src/components/theme-toggle.tsx) in E:/Hitchk-Workflow/hitchk-app/client/src/pages/login.tsx. Does the file exist?
