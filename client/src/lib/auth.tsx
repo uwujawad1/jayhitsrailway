@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect, useCallback } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { apiUrl } from "@/lib/queryClient";
 
 interface AuthUser {
   userId: string;
@@ -39,7 +40,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const { data: session, isLoading, refetch } = useQuery<{ authenticated: boolean; banned?: boolean; user?: AuthUser }>({
     queryKey: ["/api/auth/session"],
     queryFn: async () => {
-      const res = await fetch("/api/auth/session", {
+      const res = await fetch(apiUrl("/api/auth/session"), {
         credentials: "include",
         cache: "no-store",
         headers: { "Cache-Control": "no-cache" },
@@ -55,7 +56,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const isBanned = session?.banned === true;
 
   const logout = useCallback(async () => {
-    await fetch("/api/auth/logout", { method: "POST" });
+    await fetch(apiUrl("/api/auth/logout"), { method: "POST", credentials: "include" });
     queryClient.invalidateQueries({ queryKey: ["/api/auth/session"] });
   }, [queryClient]);
 

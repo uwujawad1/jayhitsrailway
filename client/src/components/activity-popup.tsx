@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Zap, LogIn, Crown, UserCheck, X } from "lucide-react";
 import { useAuth } from "@/lib/auth";
+import { apiUrl } from "@/lib/queryClient";
 
 interface ActivityEvent {
   id: string;
@@ -31,7 +32,7 @@ export default function ActivityPopup() {
     if (!isAuthenticated) return;
     const poll = async () => {
       try {
-        const res = await fetch(`/api/activity/recent?after=${lastTimestampRef.current}`, {
+        const res = await fetch(apiUrl(`/api/activity/recent?after=${lastTimestampRef.current}`), {
           credentials: "include",
         });
         if (!res.ok) return;

@@ -1,6 +1,6 @@
 import { Switch, Route, Redirect, useLocation } from "wouter";
 import { useEffect, useState, lazy, Suspense } from "react";
-import { queryClient } from "./lib/queryClient";
+import { apiUrl, queryClient } from "./lib/queryClient";
 import { QueryClientProvider, useQuery } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -72,7 +72,7 @@ function AdminPinPrompt({ onVerified }: { onVerified: () => void }) {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("/api/admin/verify-pin", {
+      const res = await fetch(apiUrl("/api/admin/verify-pin"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

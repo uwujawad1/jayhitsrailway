@@ -52,6 +52,21 @@ app.use(express.urlencoded({ extended: false }));
 const isProduction = process.env.NODE_ENV === "production";
 app.set("trust proxy", 1);
 
+const sessionCookieSameSite = (() => {
+  const configured = (process.env.SESSION_COOKIE_SAMESITE || "").toLowerCase();
+  if (configured === "strict" || configured === "lax" || configured === "none") {
+    return configured;
+  }
+  return isProduction ? "none" : "lax";
+})();
+
+const sessionCookieSecure = (() => {
+  if (process.env.SESSION_COOKIE_SECURE) {
+    return process.env.SESSION_COOKIE_SECURE === "true";
+  }
+  return isProduction;
+})();
+
 const MemoryStore = MemoryStoreFactory(session);
 
 async function createSessionStore(): Promise<session.Store> {
@@ -141,9 +156,9 @@ app.use((req, res, next) => {
       resave: false,
       saveUninitialized: false,
       cookie: {
-        secure: isProduction && process.env.DISABLE_SECURE_COOKIE !== "true",
+        secure: sessionCookieSecure && process.env.DISABLE_SECURE_COOKIE !== "true",
         httpOnly: true,
-        sameSite: "lax",
+        sameSite: sessionCookieSameSite,
         maxAge: 7 * 24 * 60 * 60 * 1000,
       },
     }),

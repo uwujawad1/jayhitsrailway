@@ -19,7 +19,7 @@ import {
 import { PageTransition } from "@/components/page-transition";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/lib/auth";
-import { apiRequest } from "@/lib/queryClient";
+import { apiRequest, apiUrl } from "@/lib/queryClient";
 
 interface Gateway {
   id: string;
@@ -191,7 +191,7 @@ export default function CheckerPage() {
 
     const poll = async () => {
       try {
-        const res = await fetch(`/api/check/batch/${activeJobId}?after=${seenCountRef.current}`, {
+        const res = await fetch(apiUrl(`/api/check/batch/${activeJobId}?after=${seenCountRef.current}`), {
           credentials: "include",
         });
         if (!res.ok) {

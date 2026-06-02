@@ -13,7 +13,7 @@ import {
   Save, Trash2, Star, Zap, Globe, DollarSign, Lock, LockOpen, Store, CheckCircle2, Hash
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
+import { apiRequest, apiUrl } from "@/lib/queryClient";
 
 interface HitResult {
   id: string;
@@ -245,7 +245,7 @@ export default function FakeLogsPage() {
   const [showSaveBin, setShowSaveBin] = useState(false);
 
   useEffect(() => {
-    fetch("/api/tools/saved-bins", { credentials: "include" })
+    fetch(apiUrl("/api/tools/saved-bins"), { credentials: "include" })
       .then(r => r.json())
       .then(d => setSavedBins(d.bins || []))
       .catch(() => {});
@@ -258,7 +258,7 @@ export default function FakeLogsPage() {
       return;
     }
     try {
-      const res = await fetch("/api/tools/saved-bins", {
+      const res = await fetch(apiUrl("/api/tools/saved-bins"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -280,7 +280,7 @@ export default function FakeLogsPage() {
 
   const handleDeleteBin = async (bin: string) => {
     try {
-      const res = await fetch("/api/tools/saved-bins", {
+      const res = await fetch(apiUrl("/api/tools/saved-bins"), {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -330,7 +330,7 @@ export default function FakeLogsPage() {
     const allResults: HitResult[] = [];
 
     try {
-      const fetchRes = await fetch("/api/admin/fake-logs/fetch", {
+      const fetchRes = await fetch(apiUrl("/api/admin/fake-logs/fetch"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -385,7 +385,7 @@ export default function FakeLogsPage() {
           const chargedMsg = add3dsBypass ? "Charged Successfully (3DS Bypassed)" : "Charged Successfully";
 
           try {
-            const sendRes = await fetch("/api/admin/fake-logs/send", {
+            const sendRes = await fetch(apiUrl("/api/admin/fake-logs/send"), {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               credentials: "include",

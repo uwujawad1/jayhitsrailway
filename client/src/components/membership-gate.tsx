@@ -4,6 +4,7 @@ import { useAuth } from "@/lib/auth";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Users, Megaphone, ShieldAlert, RefreshCw, AlertCircle, CheckCircle2 } from "lucide-react";
+import { apiUrl } from "@/lib/queryClient";
 
 interface MembershipData {
   member: boolean;
@@ -51,7 +52,7 @@ export function MembershipGate({ children }: { children: React.ReactNode }) {
     setRefreshing(true);
     setRefreshStatus(null);
     try {
-      const res = await fetch("/api/user/membership?refresh=true", { credentials: "include" });
+      const res = await fetch(apiUrl("/api/user/membership?refresh=true"), { credentials: "include" });
       const freshData = await res.json();
       queryClient.setQueryData(["/api/user/membership"], freshData);
       if (freshData.member) {

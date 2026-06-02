@@ -6,7 +6,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Badge } from "@/components/ui/badge";
 import { Settings, Save, RotateCw, Eye, EyeOff, KeyRound, Hash, Link2, Users, Shield, Scan, CheckCircle2, Loader2, Phone, Webhook, ShieldCheck, ShieldOff, RefreshCw, Globe, Lock, Unlock, AlertTriangle, Target, Download, Database, Bot } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
-import { apiRequest, queryClient } from "@/lib/queryClient";
+import { apiRequest, apiUrl, queryClient } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { useState, useEffect } from "react";
 
@@ -968,7 +968,7 @@ export default function SettingsPage() {
               variant="outline"
               onClick={async () => {
                 try {
-                  const res = await fetch("/api/admin/export-snapshot", {
+                  const res = await fetch(apiUrl("/api/admin/export-snapshot"), {
                     method: "POST",
                     credentials: "include",
                   });

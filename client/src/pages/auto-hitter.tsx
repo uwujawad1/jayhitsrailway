@@ -16,7 +16,7 @@ import {
   FileText, ShoppingCart
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
+import { apiRequest, apiUrl } from "@/lib/queryClient";
 
 interface HitResult {
   id: string;
@@ -297,11 +297,11 @@ export default function AutoHitterPage() {
   const [saveBinLabel, setSaveBinLabel] = useState("");
   const [showSaveBin, setShowSaveBin] = useState(false);
   useEffect(() => {
-    fetch("/api/tools/hitter-history", { credentials: "include" })
+    fetch(apiUrl("/api/tools/hitter-history"), { credentials: "include" })
       .then(r => r.json())
       .then(d => setHistory(d.sessions || []))
       .catch(() => {});
-    fetch("/api/tools/saved-bins", { credentials: "include" })
+    fetch(apiUrl("/api/tools/saved-bins"), { credentials: "include" })
       .then(r => r.json())
       .then(d => setSavedBins(d.bins || []))
       .catch(() => {});
@@ -314,7 +314,7 @@ export default function AutoHitterPage() {
       return;
     }
     try {
-      const res = await fetch("/api/tools/saved-bins", {
+      const res = await fetch(apiUrl("/api/tools/saved-bins"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -336,7 +336,7 @@ export default function AutoHitterPage() {
 
   const handleDeleteBin = async (bin: string) => {
     try {
-      const res = await fetch("/api/tools/saved-bins", {
+      const res = await fetch(apiUrl("/api/tools/saved-bins"), {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

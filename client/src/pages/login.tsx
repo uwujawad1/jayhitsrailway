@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { CreditCard, Send, ShieldCheck, Loader2, KeyRound, ExternalLink, MessageCircle, Clock, Gift, Ban } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/lib/auth";
-import { apiRequest } from "@/lib/queryClient";
+import { apiRequest, apiUrl } from "@/lib/queryClient";
 import { useQueryClient } from "@tanstack/react-query";
 
 const OTP_COOLDOWN = 30; // seconds before another OTP can be requested
@@ -36,7 +36,7 @@ export default function LoginPage() {
   }, []);
 
   useEffect(() => {
-    fetch("/api/bot/username")
+    fetch(apiUrl("/api/bot/username"))
       .then(r => r.json())
       .then(d => { if (d.username) setBotUsername(d.username); })
       .catch(() => {});

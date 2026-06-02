@@ -14,7 +14,7 @@ function getApiBaseUrl(): string {
   return configuredApiBaseUrl;
 }
 
-function apiUrl(url: string): string {
+export function apiUrl(url: string): string {
   if (/^https?:\/\//i.test(url)) return url;
   const apiBaseUrl = getApiBaseUrl();
   return `${apiBaseUrl}${url.startsWith("/") ? url : `/${url}`}`;

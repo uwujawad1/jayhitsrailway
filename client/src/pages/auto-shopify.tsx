@@ -12,7 +12,7 @@ import {
   Square, RefreshCw
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
+import { apiRequest, apiUrl } from "@/lib/queryClient";
 
 interface JobResult {
   id: string;
@@ -129,7 +129,7 @@ export default function AutoShopifyPage() {
 
     const poll = async () => {
       try {
-        const res = await fetch(`/api/check/batch/${activeJobId}?after=${seenCountRef.current}`, {
+        const res = await fetch(apiUrl(`/api/check/batch/${activeJobId}?after=${seenCountRef.current}`), {
           credentials: "include",
         });
         if (!res.ok) {
