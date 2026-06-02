@@ -86,6 +86,11 @@ async def health():
     return {"ok": True, "service": "jayhits-fastapi"}
 
 
+@app.get("/")
+async def root():
+    return {"ok": True, "service": "jayhits-backend"}
+
+
 @app.api_route("/{path:path}", methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"])
 async def proxy_to_legacy(path: str, request: Request):
     url = f"{LEGACY_URL}/{path}"
