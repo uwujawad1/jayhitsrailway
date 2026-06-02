@@ -2,6 +2,7 @@ import { QueryClient, QueryFunction } from "@tanstack/react-query";
 
 const configuredApiBaseUrl = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
 const isPlaceholderApiBaseUrl = /your-.*backend|example\.com/i.test(configuredApiBaseUrl);
+const useDirectApiBaseUrl = import.meta.env.VITE_API_DIRECT === "true";
 
 function isLocalHostname(hostname: string): boolean {
   return hostname === "localhost" || hostname === "127.0.0.1" || hostname === "::1";
@@ -16,7 +17,7 @@ function getApiBaseUrl(): string {
     return "";
   }
 
-  return configuredApiBaseUrl;
+  return useDirectApiBaseUrl ? configuredApiBaseUrl : "";
 }
 
 export function apiUrl(url: string): string {
@@ -25,11 +26,37 @@ export function apiUrl(url: string): string {
   return `${apiBaseUrl}${url.startsWith("/") ? url : `/${url}`}`;
 }
 
-async function throwIfResNotOk(res: Response) {
+async function readResponseError(res: Response) {
+  const contentType = res.headers.get("content-type") || "";
+  const fallback = res.statusText || "Request failed";
+
+  if (contentType.includes("application/json")) {
+    try {
+      const data = await res.json();
+      return data.error || data.message || JSON.stringify(data);
+    } catch {
+      return fallback;
+    }
+  }
+
+  const text = await res.text();
+  return text || fallback;
+}
+
+export async function getResponseErrorMessage(res: Response) {
+  return readResponseError(res);
+}
+
+export async function throwIfResNotOk(res: Response) {
   if (!res.ok) {
-    const text = (await res.text()) || res.statusText;
+    const text = await readResponseError(res);
     throw new Error(`${res.status}: ${text}`);
   }
+}
+
+export async function parseJsonResponse<T = any>(res: Response): Promise<T> {
+  await throwIfResNotOk(res);
+  return res.json();
 }
 
 export async function apiRequest(
@@ -74,7 +101,7 @@ export const queryClient = new QueryClient({
       queryFn: getQueryFn({ on401: "throw" }),
       refetchInterval: false,
       refetchOnWindowFocus: false,
-      staleTime: Infinity,
+      staleTime: 0,
       retry: false,
     },
     mutations: {

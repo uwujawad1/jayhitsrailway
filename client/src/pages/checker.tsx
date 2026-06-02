@@ -19,7 +19,7 @@ import {
 import { PageTransition } from "@/components/page-transition";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/lib/auth";
-import { apiRequest, apiUrl } from "@/lib/queryClient";
+import { apiRequest, apiUrl, parseJsonResponse } from "@/lib/queryClient";
 
 interface Gateway {
   id: string;
@@ -159,15 +159,7 @@ export default function CheckerPage() {
         cache: "no-store",
         headers: { "Cache-Control": "no-cache" },
       });
-      if (!res.ok) {
-        let message = `Failed to load gateways (${res.status})`;
-        try {
-          const data = await res.json();
-          message = data.error || data.message || message;
-        } catch {}
-        throw new Error(message);
-      }
-      return res.json();
+      return parseJsonResponse(res);
     },
     refetchInterval: 10000,
     staleTime: 0,
@@ -242,7 +234,7 @@ export default function CheckerPage() {
             const logType = r.status === "charged" ? "success" as const :
               r.status === "approved" ? "success" as const :
               r.status === "declined" ? "error" as const : "warn" as const;
-            const time = new Date(r.timestamp).toLocaleTimeString("en-US", { hour12: false, hour: "2-digit", minute: "2-digit", second: "2-digit" });
+            const time = new Date(r.timestamp ?? Date.now()).toLocaleTimeString("en-US", { hour12: false, hour: "2-digit", minute: "2-digit", second: "2-digit" });
             setLogs(p => [...p, { time, message: `${r.card} → ${r.status.toUpperCase()}: ${(r.response || "").slice(0, 80)}`, type: logType }]);
           }
 

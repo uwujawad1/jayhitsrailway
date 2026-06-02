@@ -221,12 +221,12 @@ export default function CCFilterPage() {
                             <Globe className="w-3 h-3 lg:w-4 lg:h-4" />
                             By Country
                           </div>
-                          {Object.entries(result.by_country).map(([country, cards]) => {
+                          {Object.entries(result.by_country).map(([country, count]) => {
                             const firstBin = Object.keys(result.bin_info).find(b => result.bin_info[b]?.country === country);
                             const flag = firstBin ? result.bin_info[firstBin]?.flag || "" : "";
                             return (
                               <SelectItem key={`country:${country}`} value={`country:${country}`}>
-                                {flag} {country} ({cards.length})
+                                {flag} {country} ({count})
                               </SelectItem>
                             );
                           })}

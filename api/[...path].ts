@@ -26,8 +26,16 @@ function getBackendUrl() {
 }
 
 function getForwardPath(path: string | string[] | undefined) {
-  const parts = Array.isArray(path) ? path : path ? [path] : [];
+  const parts = Array.isArray(path) ? path : path ? path.split("/") : [];
   return parts.map((part) => encodeURIComponent(part)).join("/");
+}
+
+function getRequestBody(req: VercelRequest) {
+  if (req.method === "GET" || req.method === "HEAD") return undefined;
+  if (req.body === undefined || req.body === null) return undefined;
+  if (Buffer.isBuffer(req.body)) return req.body;
+  if (typeof req.body === "string") return req.body;
+  return JSON.stringify(req.body);
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -54,14 +62,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   for (const [key, value] of Object.entries(req.headers)) {
     if (!value) continue;
     const lower = key.toLowerCase();
-    if (["host", "content-length", "connection"].includes(lower)) continue;
+    if (["host", "content-length", "connection", "accept-encoding"].includes(lower)) continue;
     headers.set(key, Array.isArray(value) ? value.join(",") : value);
   }
 
   const response = await fetch(url, {
     method: req.method,
     headers,
-    body: req.method === "GET" || req.method === "HEAD" ? undefined : JSON.stringify(req.body ?? {}),
+    body: getRequestBody(req),
     redirect: "manual",
   });
 

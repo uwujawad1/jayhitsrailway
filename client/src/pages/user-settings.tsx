@@ -10,7 +10,7 @@ import {
   ArrowLeft, Globe, Key, Loader2, Plus, Trash2, CheckCircle2, Shield, ListPlus
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest, apiUrl, queryClient } from "@/lib/queryClient";
+import { apiRequest, apiUrl, parseJsonResponse, queryClient } from "@/lib/queryClient";
 
 interface SettingsData {
   proxies: string[];
@@ -65,8 +65,7 @@ export default function UserSettingsPage() {
         cache: "no-store",
         headers: { "Cache-Control": "no-cache" },
       });
-      if (!res.ok) throw new Error(await res.text());
-      return res.json();
+      return parseJsonResponse(res);
     },
     staleTime: 0,
   });
